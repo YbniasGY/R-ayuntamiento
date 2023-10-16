@@ -1915,6 +1915,15 @@ mean(x, na.rm = TRUE)
 
 ---
 
+# Clase 2: bases de datos en R {#clase-2}
+
+[**Primeras bases de datos. Tidydata**]{style="color:#444442;"}
+
+# Clase 2: matrices {#clase-2-matrices}
+
+[**Matrices**]{style="color:#444442;"}
+
+---
 
 ## Primera base de datos: matrices
 
@@ -2098,7 +2107,10 @@ apply(x, MARGIN = 2, FUN = "sum") # suma por columnas
 ```
 :::
 
----
+# Clase 2: datos tabulados {#clase-2-data-frames}
+
+[**Data.frames y tibbles**]{style="color:#444442;"}
+
 
 ## Segundo intento: data.frame
 
@@ -2467,7 +2479,7 @@ pinniped_tb
 ```
 
 
-# Clase 1: tidydata {#clase-1-tidydata}
+# Clase 2: tidydata {#clase-2-tidydata}
 
 [**Nuestra base de datos: tibble. Tidydata: un multiverso de datos limpios**]{style="color:#444442;"}
 
@@ -3005,7 +3017,7 @@ who
 
 
 
-# Clase 1: importar y exportar {#clase-1-importar}
+# Clase 2: importar y exportar {#clase-2-importar}
 
 [**Repasando tidydata. Importar/exportar datos en R**]{style="color:#444442;"}
 
@@ -3633,52 +3645,6 @@ aemet_last_obs("0076")
 
 ---
 
-## Desde API (catastro)
-
-También puedes conectar con la [**API del catrastro**]{.hl-yellow} y buscar por ejemplo por coordenadas
-
-```{r}
-#| eval: false
-library(CatastRo)
-catr_ovc_get_rccoor(lat = 38.61965, lon = -3.45624, srs = "4230")
-```
-
----
-
-## Desde Spotify
-
-Incluso podemos hacer un uso más complejo de las API y bajarnos [**datos de sitios como Twitter o Spotify**]{.hl-yellow} (ver documentación en <https://www.rcharlie.com/spotifyr/>)
-
-```{r}
-library(spotifyr)
-Sys.setenv(SPOTIFY_CLIENT_ID = "79753b0500d34faaaef8673cc36bcf47")
-Sys.setenv(SPOTIFY_CLIENT_SECRET = 'ca2955d430064ce5ba6a158a02a19772')
-access_token <- get_spotify_access_token()
-```
-
-```{r}
-rosalia <- get_artist_audio_features("Rosalía")
-as_tibble(rosalia)
-```
-
-
----
-
-
-## Desde chess.com
-
-Incluso puedes bajarte [**datos de ajedrez**]{.hl-yellow} de plataformas como <https://chess.com> (y analizarlas)
-
-```{r}
-# devtools::install_github("JaseZiv/chessR")
-library(chessR)
-library(chess)
-chess_data <- get_raw_chessdotcom(usernames = "DadosDeLaplace", year_month = c(202301:202303))
-tibble::as_tibble(chess_data)
-```
-
----
-
 
 ## 💻 Tu turno {#tu-turno-7}
 
@@ -3769,4 +3735,433 @@ En la carpeta de datos tienes el dataset `breast-cancer-wisconsin-data.csv`. Cre
 . . .
 
 4. Busca la ayuda de la función `t.test()`. Dicha función nos permite contrastar si la media de dos distribuciones son o no iguales. ¿Podemos rechazar la hipótesis nula de que la media del radio sea la misma, bajo una significancia de $\alpha = 0.05$?
+
+
+
+# Clase 2: import/export, comunicar {#clase-2-qmd}
+
+[**Importar/exportar datos en R. Comunicar resultados: rmd y Quarto**]{style="color:#444442;"}
+
+---
+
+## Comunicar: rmd y Quarto
+
+Una de las [**principales fortalezas**]{.hl-yellow} de `R` es la [**facilidad para generar informes, libros, webs, apuntes y hasta diapositivas**]{.hl-yellow} (este mismo material por ejemplo). Para ello [**instalaremos**]{.hl-purple} antes
+
+::: columns
+::: {.column width="40%"}
+-   el paquete `{rmarkdown}` (para generar archivos `.rmd`)
+
+```{r}
+#| eval: false
+install.packages("rmarkdown")
+```
+
+-   instalar [**Quarto**](https://quarto.org/docs/get-started/) (el «nuevo» `.rmd` ahora como `.qmd`)
+:::
+
+::: {.column width="60%"}
+![](img/quarto.png)
+:::
+:::
+
+---
+
+## Comunicar: rmd y Quarto
+
+Hasta ahora solo hemos programado en scripts (archivos `.R`) dentro de proyectos, pero en muchas ocasiones [**no trabajaremos solos**]{.hl-yellow} y necesitaremos [**comunicar los resultados**]{.hl-yellow} en diferentes formatos:
+
+-   apuntes (para nosotros mismos)
+-   diapositivas
+-   web
+-   informes
+
+. . .
+ 
+Para todo ello usaremos [**Quarto (nuevo rmarkdown)**]{.hl-yellow}
+
+
+---
+
+## Comunicar: rmd y Quarto
+
+Los archivos de extensión `.qmd` (o `.rmd`) nos permitirán fácilmente combinar:
+
+-   [**Markdown**]{.hl-yellow}: [**lenguaje tipado**]{.hl-purple} que nos permite crear contenido simple (tipo wordpress, con texto, **negritas**, _cursivas_, etc) con un diseño legible.
+
+. . .
+
+-   [**Matemáticas (latex)**]{.hl-yellow}: lenguaje para escribir notación matemática como $x^2$ o $\sqrt{y}$ o $\int_{a}^{b} f(x) dx$
+
+. . .
+
+-   [**Código y salidas**]{.hl-yellow}: podremos no solo mostrar el paso final sino el código que has ido realizando (no solo en `R`), con [**cajitas de código llamadas chunks**]{.hl-purple}.
+
+. . .
+
+-   Imágenes, [**gráficas**]{.hl-yellow}, tablas, estilos (css, js), etc.
+
+---
+
+## Comunicar: rmd y Quarto
+
+La principal ventaja de realizar este tipo de material en Quarto/Rmarkdown es que, al hacerlo desde `RStudio`, puedes generar un [**informe o una presentación sin salirte del entorno de programación**]{.hl-yellow} en el que estás trabajando
+
+De esta forma podrás analizar los datos, resumirlos y a la vez comunicarlos con la misma herramienta.
+
+. . .
+
+Recientemente el equipo de `RStudio` desarrolló [**Quarto**]{.hl-yellow}, una versión mejorada de Rmarkdown (archivos `.qmd`), con un formato un poco más estético y simple. Tienes toda la documentación y ejemplos en [**https://quarto.org/**](https://quarto.org/)
+
+---
+
+## Nuestro primer informe
+
+::: columns
+::: {.column width="55%"}
+![](img/quarto-create.png)
+:::
+
+::: {.column width="45%"}
+Vamos a crear el [**primer fichero rmarkdown con Quarto**]{.hl-yellow} con extensión `.qmd`. Para ello solo necesitaremos hacer click en
+
+`File << New File << Quarto Document`
+:::
+:::
+
+---
+
+## Nuestro primer informe
+
+:::: columns
+::: {.column width="45%"}
+![](img/quarto-format.png)
+:::
+
+::: {.column width="55%"}
+Tras hacerlo nos aparecerán varias [**opciones de formatos de salida**]{.hl-yellow}:
+
+-   archivo `.pdf`
+-   archivo `.html` ([**recomendable**]{.hl-yellow}): documento dinámico, permite la interacción con el usuario, como una «página web».
+-   archivo `.doc` (nada recomendable)
+:::
+::::
+
+. . .
+
+De momento dejaremos marcado el [**formato HTML que viene por defecto**]{.hl-yellow}, y escribiremos el [**título**]{.hl-yellow} de nuestro documento. Tras ello tendremos nuestro [**archivo .qmd**]{.hl-yellow} (ya no es un script .R como los que hemos abierto hasta ahora).
+
+---
+
+## Nuestro primer informe
+
+:::: columns
+::: {.column width="60%"}
+![](img/quarto-example.png)
+:::
+
+::: {.column width="40%"}
+
+Deberías tener algo similar a la captura de la imagen con [**dos modos de edición**]{.hl-yellow}: `Source` (con código, la opción recomendada hasta que lo domines) y `Visual` (más parecido a un blog)
+
+:::
+::::
+
+Para [**ejecutar TODO el documento**]{.hl-yellow} debes clickar `Render on Save` y darle a guardar.
+
+## Cabecera de un qmd
+
+![](img/quarto-prueba-html.png)
+
+Deberías haber obtenido una [**salida en html similar a esta**]{.hl-yellow} (y se te ha generado en tu ordenador un [**archivo html**]{.hl-yellow})
+
+---
+
+## Nuestro primer informe
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-example.png)
+
+:::
+
+::: {.column width="50%"}
+
+Un fichero `.qmd` se [**divide básicamente en tres partes**]{.hl-yellow}:
+
+* [**Cabecera**]{.hl-yellow}: la parte que tienes al inicio entre `---`.
+
+* [**Texto**]{.hl-yellow}: que podremos formatear y mejorar con negritas (escrito como **negritas**, con doble astérisco al inicio y final), cursivas (_cursivas_, con barra baja al inicio y final) o destacar nombres de funciones o variables de R. Puedes añadir ecuaciones como $x^2$ (he escrito `$x^2$`, entre dólares).
+
+* [**Código R**]{.hl-yellow}
+
+:::
+::::
+
+---
+
+## Cabecera de un qmd
+
+La [**cabecera están en formato YAML**]{.hl-yellow} y contiene los [**metadatos**]{.hl-yellow} del documento:
+
+:::: columns
+::: {.column width="30%"}
+![](img/quarto-cabecera.png)
+:::
+
+::: {.column width="70%"}
+
+* `title` y `subtitle`: el título/subtítulo del documento
+* `author`: autor del mismo
+* `date`: fecha
+* `format`: formato de salida (podremos personalizar)
+  * `theme`: si tienes algún archivo de estilos
+  * `toc`: si quieres índice o no
+  * `toc-location`: posición del índice
+  * `toc-title`: título del índice
+  * `toc-depth`: profundidad del índice
+* `editor`: si estás en modo visual o source.
+
+:::
+::::
+
+---
+
+## Texto de un qmd
+
+Respecto a la escritura solo hay una [**cosa importante**]{.hl-yellow}: salvo que indiquemos lo contrario, [**TODO lo que vamos a escribir es texto (normal)**]{.hl-yellow}. No código R.
+
+:::: columns
+::: {.column width="35%"}
+![](img/quarto-prueba-qmd2.png){width=350}
+![](img/quarto-prueba-html2.png){width=320}
+:::
+
+::: {.column width="65%"}
+Vamos a empezar escribiendo una sección al inicio (`# Intro` y detrás por ej. la frase
+
+> Este material ha sido diseñado por el profesor Javier Álvarez Liébana, docente en la Universidad Complutense de Madrid
+
+Además al `Running Code` le añadiremos una almohadilla `#`: las [**almohadillas FUERA DE CHUNKS**]{.hl-yellow} nos servirán para crear [**epígrafes (secciones)**]{.hl-yellow} en el documento
+
+
+:::
+::::
+
+
+---
+
+## Índice de un qmd
+
+:::: columns
+::: {.column width="40%"}
+![](img/quarto-indice-qmd-2.png){width=370}
+![](img/quarto-indice-html2.png){width=370}
+:::
+
+::: {.column width="60%"}
+Para que el [**índice capture dichas secciones**]{.hl-yellow} modificaremos la cabecera del archivo como se observa en la imagen (puedes cambiar la localización del índice y el título si quieres para probar).
+
+:::
+::::
+
+---
+
+## Texto en un qmd
+
+Vamos a [**personalizar un poco el texto**]{.hl-yellow} haciendo lo siguiente:
+
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-texto-mejorado-qmd.png){width=370}
+![](img/quarto-texto-mejorado-html.png){width=370}
+:::
+
+::: {.column width="50%"}
+* Vamos a añadir [**negrita al nombre**]{.hl-yellow} (poniendo ** al inicio y al final).
+
+* Vamos añadir [**cursiva**]{.hl-yellow} a la palabra material (poniendo _ al inicio y al final).
+
+* Vamos añadir un [**enlace**]{.hl-yellow} <https://www.ucm.es>, asociándolo al nombre de la Universidad. Para ello el título lo ponemos entre corchetes y justo detrás el enlace entre paréntesis `[«Universidad Complutense de Madrid»](https://www.ucm.es)`
+
+:::
+::::
+
+---
+
+## Código en un qmd
+
+Para [**añadir código R**]{.hl-yellow} debemos crear nuestras [**cajas de código llamadas chunks**]{.hl-yellow}: altos en el camino en nuestro texto markdown donde podremos incluir código de casi cualquier lenguaje (y sus salidas).
+
+&nbsp;
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-chunk-qmd.png){width=470}
+:::
+
+::: {.column width="50%"}
+
+Para incluir uno deberá de ir [**encabezado**]{.hl-yellow} de la siguiente forma tienes un atajo `Command + Option + I` (Mac) o `Ctrl + Shift + I` (Windows)
+:::
+
+::::
+
+---
+
+## Código en un qmd
+
+Dentro de dicha cajita (que tiene ahora otro color en el documento) [**escribiremos código R**]{.hl-yellow} como lo veníamos haciendo hasta ahora en los scripts.
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-chunk-1-qmd.png){width=410}
+![](img/quarto-chunk-1-html.png){width=410}
+:::
+
+::: {.column width="50%"}
+
+ Vamos por ejemplo a definir dos variables y su suma de la siguiente manera, escribiendo dicho código en nuestro `.qmd` (dentro de ese chunk)
+
+```{r}
+# Código R
+x <- 1
+y <- 2
+x + y
+```
+
+:::
+
+::::
+
+
+---
+
+## Etiquetando chunks
+
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-tag-chunks-qmd.png){width=400}
+![](img/quarto-tag-chunks-html.png){width=400}
+:::
+
+::: {.column width="50%"}
+Los chunks pueden tener un [**nombre o etiqueta**]{.hl-yellow}, de forma que podamos referenciarlos de nuevo para no repetir código.
+:::
+::::
+
+
+---
+
+## Ejecutando chunks
+
+:::: columns
+::: {.column width="40%"}
+![](img/quarto-inline-qmd.png){width=400}
+![](img/quarto-inline-html.png){width=380}
+:::
+
+::: {.column width="60%"}
+En cada chunk aparecen [**dos botones**]{.hl-yellow}:
+
+* botón de [**play**]{.hl-yellow}: activa la [**ejecución y salida de ese chunk particular**]{.hl-yellow} (lo puedes visualizar dentro de tu propio `RStudio`)
+
+* botón de [**rebobinar**]{.hl-yellow}: activa la [**ejecución y salida de todos los chunk hasta ese**]{.hl-yellow} (sin llegar a él)
+
+&nbsp;
+
+Además podemos [**incluir código R dentro de la línea de texto**]{.hl-yellow} (en lugar de mostrar el texto x ejecuta el código R mostrando la variable).
+:::
+::::
+
+
+
+---
+
+## Personalización de chunks
+
+Los [**chunks podemos personalizarlos**]{.hl-yellow} con opciones al inicio del chunk precedido de `#|`:
+
+* `#| echo: false`: [**ejecuta código**]{.hl-green} y se [**muestra resultado**]{.hl-green} pero [**no visualiza código**]{.hl-red} en la salida.
+
+* `#| include: false`: [**ejecuta código**]{.hl-green} pero [**no muestra resultado**]{.hl-red} y [**no visualiza código**]{.hl-red} en la salida.
+
+* `#| eval: false`: [**no ejecuta código**]{.hl-red}, [**no muestra resultado**]{.hl-red} pero [**sí visualiza código**]{.hl-green} en la salida.
+
+* `#| message: false`: [**ejecuta código**]{.hl-green} pero [**no muestra mensajes de salida**]{.hl-red}.
+
+* `#| warning: false`: [**ejecuta código**]{.hl-green} pero [**no muestra mensajes de warning**]{.hl-red}.
+
+* `#| error: true`: [**ejecuta código**]{.hl-green} y [**permite que haya errores**]{.hl-green} mostrando el mensaje de error en la salida.
+
+
+![](img/quarto-options-chunk.png){width=380}
+
+Estas opciones podemos aplicarlas chunk a chunk o fijar los parámetros de forma global con `knitr::opts_chunk$set()` al inicio del documento (dentro de un chunk).
+
+---
+
+## Organizando qmd
+
+Además de texto y código podemos introducir lo siguiente:
+
+* [**Ecuaciones**]{.hl-yellow}: puedes añadir además ecuaciones como $x^2$ (he escrito `$x^2$`, la ecuación entre dólares).
+
+* [**Listas**]{.hl-yellow}: puedes itemizar elementos poniendo `*`
+
+`* Paso 1: ...`
+
+`* Paso 2: ...`
+
+* [**Cross-references**]{.hl-yellow}: puedes etiquetar partes del documento (la etiqueta se construye con `{#nombre-seccion}`) y llamarlas luego con `[Sección](@nombre-seccion)`
+
+---
+
+## Gráficas/imágenes en qmd
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-fig-qmd.png){width=340}
+![](img/quarto-fig-html.png){width=390}
+:::
+
+::: {.column width="50%"}
+Por último, también podemos [**añadir pies de gráficas o imágenes**]{.hl-yellow} añadiendo `#| fig-cap: "..."`
+:::
+::::
+
+. . .
+
+:::: columns
+::: {.column width="65%"}
+Fíjate que el [**caption está en el margen**]{.hl-yellow} (por ejemplo). Puedes cambiarlo introduciendo [**ajustes en la cabecera**]{.hl-yellow} (todo lo relativo a figuras empieza por `fig-`, y puedes ver las opciones tabulando). Tienes más información en **<https://quarto.org/>**
+:::
+
+::: {.column width="35%"}
+![](img/quarto-cabecera-desplegable.png){width=400}
+:::
+::::
+
+---
+
+## Añadir estilos
+
+:::: columns
+::: {.column width="50%"}
+![](img/quarto-estilos-qmd.png){width=400}
+![](img/quarto-estilos-html.png){width=400}
+:::
+
+::: {.column width="50%"}
+Por último puedes añadir un [**tema personalizado**]{.hl-yellow} incluyendo un [**archivo de estilos**]{.hl-yellow} (archivo en formato `.scss` o `.css`). Te he dejado uno en <https://github.com/dadosdelaplace/R-ayuntamiento/tree/main/material>.
+
+::: callout-important
+## Importante
+
+El archivo de estilos debe estar en la misma carpeta que el archivo `.qmd`
+:::
+:::
+::::
 

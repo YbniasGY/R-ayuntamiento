@@ -1483,7 +1483,7 @@ Curso para el Ayuntamiento de Madrid • curso 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-02"</code></pre>
+<pre><code>[1] "2023-10-16"</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1493,7 +1493,7 @@ Curso para el Ayuntamiento de Madrid • curso 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-10-02 19:21:37 CEST"</code></pre>
+<pre><code>[1] "2023-10-16 18:52:55 CEST"</code></pre>
 </div>
 </div>
 </div>
@@ -2415,6 +2415,19 @@ Curso para el Ayuntamiento de Madrid • curso 2023-2024
 </div>
 </div>
 </section>
+<section class="slide level2">
+
+</section></section>
+<section id="clase-2" class="title-slide slide level1 center">
+<h1>Clase 2: bases de datos en R</h1>
+<p><span style="color:#444442;"><strong>Primeras bases de datos. Tidydata</strong></span></p>
+</section>
+
+<section>
+<section id="clase-2-matrices" class="title-slide slide level1 center">
+<h1>Clase 2: matrices</h1>
+<p><span style="color:#444442;"><strong>Matrices</strong></span></p>
+</section>
 <section id="primera-base-de-datos-matrices" class="slide level2">
 <h2>Primera base de datos: matrices</h2>
 <p>Cuando analizamos datos solemos tener <span class="hl-yellow"><strong>varias variables</strong></span> de cada individuo: necesitamos una «tabla» que las recopile. La opción más inmediata son las <span class="hl-yellow"><strong>matrices</strong></span>: concatenación de variables del <span class="hl-purple"><strong>mismo tipo e igual longitud</strong></span>.</p>
@@ -2632,6 +2645,11 @@ pesos       63   70   85   95</code></pre>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="clase-2-data-frames" class="title-slide slide level1 center">
+<h1>Clase 2: datos tabulados</h1>
+<p><span style="color:#444442;"><strong>Data.frames y tibbles</strong></span></p>
 </section>
 <section id="segundo-intento-data.frame" class="slide level2">
 <h2>Segundo intento: data.frame</h2>
@@ -3088,8 +3106,8 @@ pesos       63   70   85   95</code></pre>
 </div>
 </section></section>
 <section>
-<section id="clase-1-tidydata" class="title-slide slide level1 center">
-<h1>Clase 1: tidydata</h1>
+<section id="clase-2-tidydata" class="title-slide slide level1 center">
+<h1>Clase 2: tidydata</h1>
 <p><span style="color:#444442;"><strong>Nuestra base de datos: tibble. Tidydata: un multiverso de datos limpios</strong></span></p>
 </section>
 <section id="previously-in-breaking-bad" class="slide level2">
@@ -3727,8 +3745,8 @@ pesos       63   70   85   95</code></pre>
 </div>
 </section></section>
 <section>
-<section id="clase-1-importar" class="title-slide slide level1 center">
-<h1>Clase 1: importar y exportar</h1>
+<section id="clase-2-importar" class="title-slide slide level1 center">
+<h1>Clase 2: importar y exportar</h1>
 <p><span style="color:#444442;"><strong>Repasando tidydata. Importar/exportar datos en R</strong></span></p>
 </section>
 <section id="caso-práctico-anterior" class="slide level2">
@@ -4407,99 +4425,23 @@ pesos       63   70   85   95</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb419"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb419-1"><a href="#cb419-1"></a><span class="fu">aemet_last_obs</span>(<span class="st">"0076"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 23 × 23
+<pre><code># A tibble: 24 × 23
    idema   lon fint                 prec   alt  vmax    vv    dv   lat  dmax
    &lt;chr&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 0076   2.07 2023-10-01 18:00:00     0     4   6.2   4.1    90  41.3   100
- 2 0076   2.07 2023-10-01 19:00:00     0     4   5.1   4.1    90  41.3   120
- 3 0076   2.07 2023-10-01 20:00:00     0     4   6.2   4.1    80  41.3    40
- 4 0076   2.07 2023-10-01 21:00:00     0     4   5.7   3      80  41.3    60
- 5 0076   2.07 2023-10-01 22:00:00     0     4   3.6   2.6    70  41.3    70
- 6 0076   2.07 2023-10-01 23:00:00     0     4   3.6   2.3   360  41.3    70
- 7 0076   2.07 2023-10-02 00:00:00     0     4   6.2   3.2    10  41.3    50
- 8 0076   2.07 2023-10-02 01:00:00     0     4   3.6   2.9    10  41.3    10
- 9 0076   2.07 2023-10-02 02:00:00     0     4   4.1   3.3   360  41.3   350
-10 0076   2.07 2023-10-02 03:00:00     0     4   4.1   3.2   360  41.3   360
-# ℹ 13 more rows
+ 1 0076   2.07 2023-10-15 17:00:00   0.1     4   4.6   2.7   140  41.3   140
+ 2 0076   2.07 2023-10-15 18:00:00   0.1     4   4.1   2.6   140  41.3   130
+ 3 0076   2.07 2023-10-15 19:00:00   0       4   5.1   2.8   140  41.3   120
+ 4 0076   2.07 2023-10-15 20:00:00   0       4   4.6   2.1   140  41.3   160
+ 5 0076   2.07 2023-10-15 21:00:00   0       4   4.1   1.1   180  41.3   130
+ 6 0076   2.07 2023-10-15 22:00:00   1.9     4   3.1   1.5    40  41.3   260
+ 7 0076   2.07 2023-10-15 23:00:00   0.4     4   3.6   2.1   220  41.3   170
+ 8 0076   2.07 2023-10-16 00:00:00   9.2     4   5.1   2.2   340  41.3    30
+ 9 0076   2.07 2023-10-16 01:00:00   4.8     4   5.1   2.8   100  41.3   100
+10 0076   2.07 2023-10-16 02:00:00   0.2     4   4.1   1.2   110  41.3    80
+# ℹ 14 more rows
 # ℹ 13 more variables: ubi &lt;chr&gt;, pres &lt;dbl&gt;, hr &lt;dbl&gt;, stdvv &lt;dbl&gt;, ts &lt;dbl&gt;,
 #   pres_nmar &lt;dbl&gt;, tamin &lt;dbl&gt;, ta &lt;dbl&gt;, tamax &lt;dbl&gt;, tpr &lt;dbl&gt;, vis &lt;dbl&gt;,
 #   stddv &lt;dbl&gt;, inso &lt;dbl&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="desde-api-catastro" class="slide level2">
-<h2>Desde API (catastro)</h2>
-<p>También puedes conectar con la <span class="hl-yellow"><strong>API del catrastro</strong></span> y buscar por ejemplo por coordenadas</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb421"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb421-1"><a href="#cb421-1"></a><span class="fu">library</span>(CatastRo)</span>
-<span id="cb421-2"><a href="#cb421-2"></a><span class="fu">catr_ovc_get_rccoor</span>(<span class="at">lat =</span> <span class="fl">38.61965</span>, <span class="at">lon =</span> <span class="sc">-</span><span class="fl">3.45624</span>, <span class="at">srs =</span> <span class="st">"4230"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="desde-spotify" class="slide level2">
-<h2>Desde Spotify</h2>
-<p>Incluso podemos hacer un uso más complejo de las API y bajarnos <span class="hl-yellow"><strong>datos de sitios como Twitter o Spotify</strong></span> (ver documentación en <a href="https://www.rcharlie.com/spotifyr/" class="uri">https://www.rcharlie.com/spotifyr/</a>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb422"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb422-1"><a href="#cb422-1"></a><span class="fu">library</span>(spotifyr)</span>
-<span id="cb422-2"><a href="#cb422-2"></a><span class="fu">Sys.setenv</span>(<span class="at">SPOTIFY_CLIENT_ID =</span> <span class="st">"79753b0500d34faaaef8673cc36bcf47"</span>)</span>
-<span id="cb422-3"><a href="#cb422-3"></a><span class="fu">Sys.setenv</span>(<span class="at">SPOTIFY_CLIENT_SECRET =</span> <span class="st">'ca2955d430064ce5ba6a158a02a19772'</span>)</span>
-<span id="cb422-4"><a href="#cb422-4"></a>access_token <span class="ot">&lt;-</span> <span class="fu">get_spotify_access_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb423"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb423-1"><a href="#cb423-1"></a>rosalia <span class="ot">&lt;-</span> <span class="fu">get_artist_audio_features</span>(<span class="st">"Rosalía"</span>)</span>
-<span id="cb423-2"><a href="#cb423-2"></a><span class="fu">as_tibble</span>(rosalia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 63 × 39
-   artist_name artist_id     album_id album_type album_images album_release_date
-   &lt;chr&gt;       &lt;chr&gt;         &lt;chr&gt;    &lt;chr&gt;      &lt;list&gt;       &lt;chr&gt;             
- 1 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 2 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 3 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 4 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 5 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 6 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 7 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 8 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
- 9 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
-10 ROSALÍA     7ltDVBr6mKbR… 3zbiiu3… album      &lt;df [3 × 3]&gt; 2022-09-09        
-# ℹ 53 more rows
-# ℹ 33 more variables: album_release_year &lt;dbl&gt;,
-#   album_release_date_precision &lt;chr&gt;, danceability &lt;dbl&gt;, energy &lt;dbl&gt;,
-#   key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,
-#   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,
-#   tempo &lt;dbl&gt;, track_id &lt;chr&gt;, analysis_url &lt;chr&gt;, time_signature &lt;int&gt;,
-#   artists &lt;list&gt;, available_markets &lt;list&gt;, disc_number &lt;int&gt;, …</code></pre>
-</div>
-</div>
-</section>
-<section id="desde-chess.com" class="slide level2">
-<h2>Desde chess.com</h2>
-<p>Incluso puedes bajarte <span class="hl-yellow"><strong>datos de ajedrez</strong></span> de plataformas como <a href="https://chess.com" class="uri">https://chess.com</a> (y analizarlas)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb425"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb425-1"><a href="#cb425-1"></a><span class="co"># devtools::install_github("JaseZiv/chessR")</span></span>
-<span id="cb425-2"><a href="#cb425-2"></a><span class="fu">library</span>(chessR)</span>
-<span id="cb425-3"><a href="#cb425-3"></a><span class="fu">library</span>(chess)</span>
-<span id="cb425-4"><a href="#cb425-4"></a>chess_data <span class="ot">&lt;-</span> <span class="fu">get_raw_chessdotcom</span>(<span class="at">usernames =</span> <span class="st">"DadosDeLaplace"</span>, <span class="at">year_month =</span> <span class="fu">c</span>(<span class="dv">202301</span><span class="sc">:</span><span class="dv">202303</span>))</span>
-<span id="cb425-5"><a href="#cb425-5"></a>tibble<span class="sc">::</span><span class="fu">as_tibble</span>(chess_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 543 × 28
-   GameRules TimeClass Event      Site      Date       Round White  Black Result
-   &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; 
- 1 chess     blitz     Live Chess Chess.com 2023-01-01 -     Dados… an_o… 0-1   
- 2 chess     blitz     Live Chess Chess.com 2023-01-01 -     birph… Dado… 1-0   
- 3 chess     blitz     Live Chess Chess.com 2023-01-01 -     Miste… Dado… 0-1   
- 4 chess     blitz     Live Chess Chess.com 2023-01-01 -     Dados… jmck… 1-0   
- 5 chess     blitz     Live Chess Chess.com 2023-01-01 -     Dados… saur… 1-0   
- 6 chess     blitz     Live Chess Chess.com 2023-01-01 -     Dados… gorr… 0-1   
- 7 chess     blitz     Live Chess Chess.com 2023-01-01 -     CIA-S… Dado… 1-0   
- 8 chess     blitz     Live Chess Chess.com 2023-01-01 -     Dados… wojm… 1-0   
- 9 chess     blitz     Live Chess Chess.com 2023-01-01 -     Dados… DylB… 1-0   
-10 chess     blitz     Live Chess Chess.com 2023-01-01 -     timmy… Dado… 1-0   
-# ℹ 533 more rows
-# ℹ 19 more variables: CurrentPosition &lt;chr&gt;, Timezone &lt;chr&gt;, ECO &lt;chr&gt;,
-#   ECOUrl &lt;chr&gt;, UTCDate &lt;chr&gt;, UTCTime &lt;chr&gt;, WhiteElo &lt;chr&gt;, BlackElo &lt;chr&gt;,
-#   TimeControl &lt;chr&gt;, Termination &lt;chr&gt;, StartTime &lt;chr&gt;, EndDate &lt;chr&gt;,
-#   EndTime &lt;chr&gt;, Link &lt;chr&gt;, Moves &lt;chr&gt;, Username &lt;chr&gt;, Variant &lt;chr&gt;,
-#   SetUp &lt;chr&gt;, FEN &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -4514,8 +4456,8 @@ pesos       63   70   85   95</code></pre>
 <div class="cell">
 <details>
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb427"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb427-1"><a href="#cb427-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb427-2"><a href="#cb427-2"></a><span class="fu">save</span>(who, <span class="at">file =</span> <span class="st">"./datos/who.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb421"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb421-1"><a href="#cb421-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb421-2"><a href="#cb421-2"></a><span class="fu">save</span>(who, <span class="at">file =</span> <span class="st">"./datos/who.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -4524,7 +4466,7 @@ pesos       63   70   85   95</code></pre>
 <div class="cell">
 <details>
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb428"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb428-1"><a href="#cb428-1"></a><span class="fu">load</span>(<span class="st">"./datos/who.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb422"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb422-1"><a href="#cb422-1"></a><span class="fu">load</span>(<span class="st">"./datos/who.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -4533,23 +4475,23 @@ pesos       63   70   85   95</code></pre>
 <div class="cell">
 <details>
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb429"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb429-1"><a href="#cb429-1"></a><span class="co"># csv</span></span>
-<span id="cb429-2"><a href="#cb429-2"></a><span class="fu">library</span>(readr)</span>
-<span id="cb429-3"><a href="#cb429-3"></a><span class="fu">write_csv</span>(who, <span class="at">file =</span> <span class="st">"./datos/who.csv"</span>)</span>
-<span id="cb429-4"><a href="#cb429-4"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./datos/who.csv"</span>)</span>
-<span id="cb429-5"><a href="#cb429-5"></a></span>
-<span id="cb429-6"><a href="#cb429-6"></a><span class="co"># excel</span></span>
-<span id="cb429-7"><a href="#cb429-7"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb429-8"><a href="#cb429-8"></a><span class="fu">write.xlsx</span>(who, <span class="at">file =</span> <span class="st">"./datos/who.xlsx"</span>)</span>
-<span id="cb429-9"><a href="#cb429-9"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./datos/who.xlsx"</span>)</span>
-<span id="cb429-10"><a href="#cb429-10"></a></span>
-<span id="cb429-11"><a href="#cb429-11"></a><span class="co"># sas y stata</span></span>
-<span id="cb429-12"><a href="#cb429-12"></a><span class="fu">library</span>(haven)</span>
-<span id="cb429-13"><a href="#cb429-13"></a><span class="fu">write_sav</span>(who, <span class="at">path =</span> <span class="st">"./datos/who.sav"</span>)</span>
-<span id="cb429-14"><a href="#cb429-14"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="at">path =</span> <span class="st">"./datos/who.sav"</span>)</span>
-<span id="cb429-15"><a href="#cb429-15"></a></span>
-<span id="cb429-16"><a href="#cb429-16"></a><span class="fu">write_dta</span>(who, <span class="at">path =</span> <span class="st">"./datos/who.dta"</span>)</span>
-<span id="cb429-17"><a href="#cb429-17"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="at">path =</span> <span class="st">"./datos/who.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb423"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb423-1"><a href="#cb423-1"></a><span class="co"># csv</span></span>
+<span id="cb423-2"><a href="#cb423-2"></a><span class="fu">library</span>(readr)</span>
+<span id="cb423-3"><a href="#cb423-3"></a><span class="fu">write_csv</span>(who, <span class="at">file =</span> <span class="st">"./datos/who.csv"</span>)</span>
+<span id="cb423-4"><a href="#cb423-4"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./datos/who.csv"</span>)</span>
+<span id="cb423-5"><a href="#cb423-5"></a></span>
+<span id="cb423-6"><a href="#cb423-6"></a><span class="co"># excel</span></span>
+<span id="cb423-7"><a href="#cb423-7"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb423-8"><a href="#cb423-8"></a><span class="fu">write.xlsx</span>(who, <span class="at">file =</span> <span class="st">"./datos/who.xlsx"</span>)</span>
+<span id="cb423-9"><a href="#cb423-9"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="at">path =</span> <span class="st">"./datos/who.xlsx"</span>)</span>
+<span id="cb423-10"><a href="#cb423-10"></a></span>
+<span id="cb423-11"><a href="#cb423-11"></a><span class="co"># sas y stata</span></span>
+<span id="cb423-12"><a href="#cb423-12"></a><span class="fu">library</span>(haven)</span>
+<span id="cb423-13"><a href="#cb423-13"></a><span class="fu">write_sav</span>(who, <span class="at">path =</span> <span class="st">"./datos/who.sav"</span>)</span>
+<span id="cb423-14"><a href="#cb423-14"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="at">path =</span> <span class="st">"./datos/who.sav"</span>)</span>
+<span id="cb423-15"><a href="#cb423-15"></a></span>
+<span id="cb423-16"><a href="#cb423-16"></a><span class="fu">write_dta</span>(who, <span class="at">path =</span> <span class="st">"./datos/who.dta"</span>)</span>
+<span id="cb423-17"><a href="#cb423-17"></a>who_data <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="at">path =</span> <span class="st">"./datos/who.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -4558,9 +4500,9 @@ pesos       63   70   85   95</code></pre>
 <div class="cell">
 <details>
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb430"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb430-1"><a href="#cb430-1"></a>who_select <span class="ot">&lt;-</span></span>
-<span id="cb430-2"><a href="#cb430-2"></a>  <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./datos/who.csv"</span>,</span>
-<span id="cb430-3"><a href="#cb430-3"></a>           <span class="at">col_select =</span> <span class="fu">c</span>(<span class="st">"country"</span>, <span class="st">"iso2"</span>, <span class="st">"iso3"</span>, <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb424"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb424-1"><a href="#cb424-1"></a>who_select <span class="ot">&lt;-</span></span>
+<span id="cb424-2"><a href="#cb424-2"></a>  <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"./datos/who.csv"</span>,</span>
+<span id="cb424-3"><a href="#cb424-3"></a>           <span class="at">col_select =</span> <span class="fu">c</span>(<span class="st">"country"</span>, <span class="st">"iso2"</span>, <span class="st">"iso3"</span>, <span class="st">"year"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
@@ -4587,9 +4529,327 @@ pesos       63   70   85   95</code></pre>
 <ol start="4" type="1">
 <li>Busca la ayuda de la función <code>t.test()</code>. Dicha función nos permite contrastar si la media de dos distribuciones son o no iguales. ¿Podemos rechazar la hipótesis nula de que la media del radio sea la misma, bajo una significancia de <span class="math inline">\(\alpha = 0.05\)</span>?</li>
 </ol>
+</div>
+</section></section>
+<section>
+<section id="clase-2-qmd" class="title-slide slide level1 center">
+<h1>Clase 2: import/export, comunicar</h1>
+<p><span style="color:#444442;"><strong>Importar/exportar datos en R. Comunicar resultados: rmd y Quarto</strong></span></p>
+</section>
+<section id="comunicar-rmd-y-quarto" class="slide level2">
+<h2>Comunicar: rmd y Quarto</h2>
+<p>Una de las <span class="hl-yellow"><strong>principales fortalezas</strong></span> de <code>R</code> es la <span class="hl-yellow"><strong>facilidad para generar informes, libros, webs, apuntes y hasta diapositivas</strong></span> (este mismo material por ejemplo). Para ello <span class="hl-purple"><strong>instalaremos</strong></span> antes</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>el paquete <code>{rmarkdown}</code> (para generar archivos <code>.rmd</code>)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb425"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb425-1"><a href="#cb425-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>instalar <a href="https://quarto.org/docs/get-started/"><strong>Quarto</strong></a> (el «nuevo» <code>.rmd</code> ahora como <code>.qmd</code>)</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/quarto.png"></p>
+</div>
+</div>
+</section>
+<section id="comunicar-rmd-y-quarto-1" class="slide level2">
+<h2>Comunicar: rmd y Quarto</h2>
+<p>Hasta ahora solo hemos programado en scripts (archivos <code>.R</code>) dentro de proyectos, pero en muchas ocasiones <span class="hl-yellow"><strong>no trabajaremos solos</strong></span> y necesitaremos <span class="hl-yellow"><strong>comunicar los resultados</strong></span> en diferentes formatos:</p>
+<ul>
+<li>apuntes (para nosotros mismos)</li>
+<li>diapositivas</li>
+<li>web</li>
+<li>informes</li>
+</ul>
+<div class="fragment">
+<p>Para todo ello usaremos <span class="hl-yellow"><strong>Quarto (nuevo rmarkdown)</strong></span></p>
+</div>
+</section>
+<section id="comunicar-rmd-y-quarto-2" class="slide level2">
+<h2>Comunicar: rmd y Quarto</h2>
+<p>Los archivos de extensión <code>.qmd</code> (o <code>.rmd</code>) nos permitirán fácilmente combinar:</p>
+<ul>
+<li><span class="hl-yellow"><strong>Markdown</strong></span>: <span class="hl-purple"><strong>lenguaje tipado</strong></span> que nos permite crear contenido simple (tipo wordpress, con texto, <strong>negritas</strong>, <em>cursivas</em>, etc) con un diseño legible.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Matemáticas (latex)</strong></span>: lenguaje para escribir notación matemática como <span class="math inline">\(x^2\)</span> o <span class="math inline">\(\sqrt{y}\)</span> o <span class="math inline">\(\int_{a}^{b} f(x) dx\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Código y salidas</strong></span>: podremos no solo mostrar el paso final sino el código que has ido realizando (no solo en <code>R</code>), con <span class="hl-purple"><strong>cajitas de código llamadas chunks</strong></span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Imágenes, <span class="hl-yellow"><strong>gráficas</strong></span>, tablas, estilos (css, js), etc.</li>
+</ul>
+</div>
+</section>
+<section id="comunicar-rmd-y-quarto-3" class="slide level2">
+<h2>Comunicar: rmd y Quarto</h2>
+<p>La principal ventaja de realizar este tipo de material en Quarto/Rmarkdown es que, al hacerlo desde <code>RStudio</code>, puedes generar un <span class="hl-yellow"><strong>informe o una presentación sin salirte del entorno de programación</strong></span> en el que estás trabajando</p>
+<p>De esta forma podrás analizar los datos, resumirlos y a la vez comunicarlos con la misma herramienta.</p>
+<div class="fragment">
+<p>Recientemente el equipo de <code>RStudio</code> desarrolló <span class="hl-yellow"><strong>Quarto</strong></span>, una versión mejorada de Rmarkdown (archivos <code>.qmd</code>), con un formato un poco más estético y simple. Tienes toda la documentación y ejemplos en <a href="https://quarto.org/"><strong>https://quarto.org/</strong></a></p>
+</div>
+</section>
+<section id="nuestro-primer-informe" class="slide level2">
+<h2>Nuestro primer informe</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="img/quarto-create.png"></p>
+</div><div class="column" style="width:45%;">
+<p>Vamos a crear el <span class="hl-yellow"><strong>primer fichero rmarkdown con Quarto</strong></span> con extensión <code>.qmd</code>. Para ello solo necesitaremos hacer click en</p>
+<p><code>File &lt;&lt; New File &lt;&lt; Quarto Document</code></p>
+</div>
+</div>
+</section>
+<section id="nuestro-primer-informe-1" class="slide level2">
+<h2>Nuestro primer informe</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="img/quarto-format.png"></p>
+</div><div class="column" style="width:55%;">
+<p>Tras hacerlo nos aparecerán varias <span class="hl-yellow"><strong>opciones de formatos de salida</strong></span>:</p>
+<ul>
+<li>archivo <code>.pdf</code></li>
+<li>archivo <code>.html</code> (<span class="hl-yellow"><strong>recomendable</strong></span>): documento dinámico, permite la interacción con el usuario, como una «página web».</li>
+<li>archivo <code>.doc</code> (nada recomendable)</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p>De momento dejaremos marcado el <span class="hl-yellow"><strong>formato HTML que viene por defecto</strong></span>, y escribiremos el <span class="hl-yellow"><strong>título</strong></span> de nuestro documento. Tras ello tendremos nuestro <span class="hl-yellow"><strong>archivo .qmd</strong></span> (ya no es un script .R como los que hemos abierto hasta ahora).</p>
+</div>
+</section>
+<section id="nuestro-primer-informe-2" class="slide level2">
+<h2>Nuestro primer informe</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><img data-src="img/quarto-example.png"></p>
+</div><div class="column" style="width:40%;">
+<p>Deberías tener algo similar a la captura de la imagen con <span class="hl-yellow"><strong>dos modos de edición</strong></span>: <code>Source</code> (con código, la opción recomendada hasta que lo domines) y <code>Visual</code> (más parecido a un blog)</p>
+</div>
+</div>
+<p>Para <span class="hl-yellow"><strong>ejecutar TODO el documento</strong></span> debes clickar <code>Render on Save</code> y darle a guardar.</p>
+</section>
+<section id="cabecera-de-un-qmd" class="slide level2">
+<h2>Cabecera de un qmd</h2>
+
+<img data-src="img/quarto-prueba-html.png" class="r-stretch"><p>Deberías haber obtenido una <span class="hl-yellow"><strong>salida en html similar a esta</strong></span> (y se te ha generado en tu ordenador un <span class="hl-yellow"><strong>archivo html</strong></span>)</p>
+</section>
+<section id="nuestro-primer-informe-3" class="slide level2">
+<h2>Nuestro primer informe</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-example.png"></p>
+</div><div class="column" style="width:50%;">
+<p>Un fichero <code>.qmd</code> se <span class="hl-yellow"><strong>divide básicamente en tres partes</strong></span>:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>Cabecera</strong></span>: la parte que tienes al inicio entre <code>---</code>.</p></li>
+<li><p><span class="hl-yellow"><strong>Texto</strong></span>: que podremos formatear y mejorar con negritas (escrito como <strong>negritas</strong>, con doble astérisco al inicio y final), cursivas (<em>cursivas</em>, con barra baja al inicio y final) o destacar nombres de funciones o variables de R. Puedes añadir ecuaciones como <span class="math inline">\(x^2\)</span> (he escrito <code>$x^2$</code>, entre dólares).</p></li>
+<li><p><span class="hl-yellow"><strong>Código R</strong></span></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="cabecera-de-un-qmd-1" class="slide level2">
+<h2>Cabecera de un qmd</h2>
+<p>La <span class="hl-yellow"><strong>cabecera están en formato YAML</strong></span> y contiene los <span class="hl-yellow"><strong>metadatos</strong></span> del documento:</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="img/quarto-cabecera.png"></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><code>title</code> y <code>subtitle</code>: el título/subtítulo del documento</li>
+<li><code>author</code>: autor del mismo</li>
+<li><code>date</code>: fecha</li>
+<li><code>format</code>: formato de salida (podremos personalizar)
+<ul>
+<li><code>theme</code>: si tienes algún archivo de estilos</li>
+<li><code>toc</code>: si quieres índice o no</li>
+<li><code>toc-location</code>: posición del índice</li>
+<li><code>toc-title</code>: título del índice</li>
+<li><code>toc-depth</code>: profundidad del índice</li>
+</ul></li>
+<li><code>editor</code>: si estás en modo visual o source.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="texto-de-un-qmd" class="slide level2">
+<h2>Texto de un qmd</h2>
+<p>Respecto a la escritura solo hay una <span class="hl-yellow"><strong>cosa importante</strong></span>: salvo que indiquemos lo contrario, <span class="hl-yellow"><strong>TODO lo que vamos a escribir es texto (normal)</strong></span>. No código R.</p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img data-src="img/quarto-prueba-qmd2.png" width="350"> <img data-src="img/quarto-prueba-html2.png" width="320"></p>
+</div><div class="column" style="width:65%;">
+<p>Vamos a empezar escribiendo una sección al inicio (<code># Intro</code> y detrás por ej. la frase</p>
+<blockquote>
+<p>Este material ha sido diseñado por el profesor Javier Álvarez Liébana, docente en la Universidad Complutense de Madrid</p>
+</blockquote>
+<p>Además al <code>Running Code</code> le añadiremos una almohadilla <code>#</code>: las <span class="hl-yellow"><strong>almohadillas FUERA DE CHUNKS</strong></span> nos servirán para crear <span class="hl-yellow"><strong>epígrafes (secciones)</strong></span> en el documento</p>
+</div>
+</div>
+</section>
+<section id="índice-de-un-qmd" class="slide level2">
+<h2>Índice de un qmd</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/quarto-indice-qmd-2.png" width="370"> <img data-src="img/quarto-indice-html2.png" width="370"></p>
+</div><div class="column" style="width:60%;">
+<p>Para que el <span class="hl-yellow"><strong>índice capture dichas secciones</strong></span> modificaremos la cabecera del archivo como se observa en la imagen (puedes cambiar la localización del índice y el título si quieres para probar).</p>
+</div>
+</div>
+</section>
+<section id="texto-en-un-qmd" class="slide level2">
+<h2>Texto en un qmd</h2>
+<p>Vamos a <span class="hl-yellow"><strong>personalizar un poco el texto</strong></span> haciendo lo siguiente:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-texto-mejorado-qmd.png" width="370"> <img data-src="img/quarto-texto-mejorado-html.png" width="370"></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>Vamos a añadir <span class="hl-yellow"><strong>negrita al nombre</strong></span> (poniendo ** al inicio y al final).</p></li>
+<li><p>Vamos añadir <span class="hl-yellow"><strong>cursiva</strong></span> a la palabra material (poniendo _ al inicio y al final).</p></li>
+<li><p>Vamos añadir un <span class="hl-yellow"><strong>enlace</strong></span> <a href="https://www.ucm.es" class="uri">https://www.ucm.es</a>, asociándolo al nombre de la Universidad. Para ello el título lo ponemos entre corchetes y justo detrás el enlace entre paréntesis <code>[«Universidad Complutense de Madrid»](https://www.ucm.es)</code></p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="código-en-un-qmd" class="slide level2">
+<h2>Código en un qmd</h2>
+<p>Para <span class="hl-yellow"><strong>añadir código R</strong></span> debemos crear nuestras <span class="hl-yellow"><strong>cajas de código llamadas chunks</strong></span>: altos en el camino en nuestro texto markdown donde podremos incluir código de casi cualquier lenguaje (y sus salidas).</p>
+<p>&nbsp;</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-chunk-qmd.png" width="470"></p>
+</div><div class="column" style="width:50%;">
+<p>Para incluir uno deberá de ir <span class="hl-yellow"><strong>encabezado</strong></span> de la siguiente forma tienes un atajo <code>Command + Option + I</code> (Mac) o <code>Ctrl + Shift + I</code> (Windows)</p>
+</div>
+</div>
+</section>
+<section id="código-en-un-qmd-1" class="slide level2">
+<h2>Código en un qmd</h2>
+<p>Dentro de dicha cajita (que tiene ahora otro color en el documento) <span class="hl-yellow"><strong>escribiremos código R</strong></span> como lo veníamos haciendo hasta ahora en los scripts.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-chunk-1-qmd.png" width="410"> <img data-src="img/quarto-chunk-1-html.png" width="410"></p>
+</div><div class="column" style="width:50%;">
+<p>Vamos por ejemplo a definir dos variables y su suma de la siguiente manera, escribiendo dicho código en nuestro <code>.qmd</code> (dentro de ese chunk)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb426"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb426-1"><a href="#cb426-1"></a><span class="co"># Código R</span></span>
+<span id="cb426-2"><a href="#cb426-2"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb426-3"><a href="#cb426-3"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb426-4"><a href="#cb426-4"></a>x <span class="sc">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="etiquetando-chunks" class="slide level2">
+<h2>Etiquetando chunks</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-tag-chunks-qmd.png" width="400"> <img data-src="img/quarto-tag-chunks-html.png" width="400"></p>
+</div><div class="column" style="width:50%;">
+<p>Los chunks pueden tener un <span class="hl-yellow"><strong>nombre o etiqueta</strong></span>, de forma que podamos referenciarlos de nuevo para no repetir código.</p>
+</div>
+</div>
+</section>
+<section id="ejecutando-chunks" class="slide level2">
+<h2>Ejecutando chunks</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/quarto-inline-qmd.png" width="400"> <img data-src="img/quarto-inline-html.png" width="380"></p>
+</div><div class="column" style="width:60%;">
+<p>En cada chunk aparecen <span class="hl-yellow"><strong>dos botones</strong></span>:</p>
+<ul>
+<li><p>botón de <span class="hl-yellow"><strong>play</strong></span>: activa la <span class="hl-yellow"><strong>ejecución y salida de ese chunk particular</strong></span> (lo puedes visualizar dentro de tu propio <code>RStudio</code>)</p></li>
+<li><p>botón de <span class="hl-yellow"><strong>rebobinar</strong></span>: activa la <span class="hl-yellow"><strong>ejecución y salida de todos los chunk hasta ese</strong></span> (sin llegar a él)</p></li>
+</ul>
+<p>&nbsp;</p>
+<p>Además podemos <span class="hl-yellow"><strong>incluir código R dentro de la línea de texto</strong></span> (en lugar de mostrar el texto x ejecuta el código R mostrando la variable).</p>
+</div>
+</div>
+</section>
+<section id="personalización-de-chunks" class="slide level2">
+<h2>Personalización de chunks</h2>
+<p>Los <span class="hl-yellow"><strong>chunks podemos personalizarlos</strong></span> con opciones al inicio del chunk precedido de <code>#|</code>:</p>
+<ul>
+<li><p><code>#| echo: false</code>: <span class="hl-green"><strong>ejecuta código</strong></span> y se <span class="hl-green"><strong>muestra resultado</strong></span> pero <span class="hl-red"><strong>no visualiza código</strong></span> en la salida.</p></li>
+<li><p><code>#| include: false</code>: <span class="hl-green"><strong>ejecuta código</strong></span> pero <span class="hl-red"><strong>no muestra resultado</strong></span> y <span class="hl-red"><strong>no visualiza código</strong></span> en la salida.</p></li>
+<li><p><code>#| eval: false</code>: <span class="hl-red"><strong>no ejecuta código</strong></span>, <span class="hl-red"><strong>no muestra resultado</strong></span> pero <span class="hl-green"><strong>sí visualiza código</strong></span> en la salida.</p></li>
+<li><p><code>#| message: false</code>: <span class="hl-green"><strong>ejecuta código</strong></span> pero <span class="hl-red"><strong>no muestra mensajes de salida</strong></span>.</p></li>
+<li><p><code>#| warning: false</code>: <span class="hl-green"><strong>ejecuta código</strong></span> pero <span class="hl-red"><strong>no muestra mensajes de warning</strong></span>.</p></li>
+<li><p><code>#| error: true</code>: <span class="hl-green"><strong>ejecuta código</strong></span> y <span class="hl-green"><strong>permite que haya errores</strong></span> mostrando el mensaje de error en la salida.</p></li>
+</ul>
+
+<img data-src="img/quarto-options-chunk.png" width="380" class="r-stretch"><p>Estas opciones podemos aplicarlas chunk a chunk o fijar los parámetros de forma global con <code>knitr::opts_chunk$set()</code> al inicio del documento (dentro de un chunk).</p>
+</section>
+<section id="organizando-qmd" class="slide level2">
+<h2>Organizando qmd</h2>
+<p>Además de texto y código podemos introducir lo siguiente:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>Ecuaciones</strong></span>: puedes añadir además ecuaciones como <span class="math inline">\(x^2\)</span> (he escrito <code>$x^2$</code>, la ecuación entre dólares).</p></li>
+<li><p><span class="hl-yellow"><strong>Listas</strong></span>: puedes itemizar elementos poniendo <code>*</code></p></li>
+</ul>
+<p><code>* Paso 1: ...</code></p>
+<p><code>* Paso 2: ...</code></p>
+<ul>
+<li><span class="hl-yellow"><strong>Cross-references</strong></span>: puedes etiquetar partes del documento (la etiqueta se construye con <code>{#nombre-seccion}</code>) y llamarlas luego con <code>[Sección](@nombre-seccion)</code></li>
+</ul>
+</section>
+<section id="gráficasimágenes-en-qmd" class="slide level2">
+<h2>Gráficas/imágenes en qmd</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-fig-qmd.png" width="340"> <img data-src="img/quarto-fig-html.png" width="390"></p>
+</div><div class="column" style="width:50%;">
+<p>Por último, también podemos <span class="hl-yellow"><strong>añadir pies de gráficas o imágenes</strong></span> añadiendo <code>#| fig-cap: "..."</code></p>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:65%;">
+<p>Fíjate que el <span class="hl-yellow"><strong>caption está en el margen</strong></span> (por ejemplo). Puedes cambiarlo introduciendo <span class="hl-yellow"><strong>ajustes en la cabecera</strong></span> (todo lo relativo a figuras empieza por <code>fig-</code>, y puedes ver las opciones tabulando). Tienes más información en <strong><a href="https://quarto.org/" class="uri">https://quarto.org/</a></strong></p>
+</div><div class="column" style="width:35%;">
+<p><img data-src="img/quarto-cabecera-desplegable.png" width="400"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="añadir-estilos" class="slide level2">
+<h2>Añadir estilos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/quarto-estilos-qmd.png" width="400"> <img data-src="img/quarto-estilos-html.png" width="400"></p>
+</div><div class="column" style="width:50%;">
+<p>Por último puedes añadir un <span class="hl-yellow"><strong>tema personalizado</strong></span> incluyendo un <span class="hl-yellow"><strong>archivo de estilos</strong></span> (archivo en formato <code>.scss</code> o <code>.css</code>). Te he dejado uno en <a href="https://github.com/dadosdelaplace/R-ayuntamiento/tree/main/material" class="uri">https://github.com/dadosdelaplace/R-ayuntamiento/tree/main/material</a>.</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>El archivo de estilos debe estar en la misma carpeta que el archivo <code>.qmd</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="footer footer-default">
 <p><a href="..."><strong>Javier Álvarez Liébana</strong></a> • Curso para el Ayuntamiento de Madrid • curso 2023-2024</p>
-</div>
 </div>
 </section></section>
     </div>
