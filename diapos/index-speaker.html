@@ -1483,7 +1483,7 @@ Curso para el Ayuntamiento de Madrid • curso 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-11-07"</code></pre>
+<pre><code>[1] "2023-11-14"</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -1493,7 +1493,7 @@ Curso para el Ayuntamiento de Madrid • curso 2023-2024
 <div class="cell">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a><span class="fu">now</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2023-11-07 11:22:50 CET"</code></pre>
+<pre><code>[1] "2023-11-14 15:45:12 CET"</code></pre>
 </div>
 </div>
 </div>
@@ -3745,8 +3745,8 @@ pesos       63   70   85   95</code></pre>
 </div>
 </section></section>
 <section id="clase-3" class="title-slide slide level1 center">
-<h1>Clase 3: importar/exportar y manipulación en R</h1>
-<p><span style="color:#444442;"><strong>importar/exportar. Manipulación en R</strong></span></p>
+<h1>Clase 3: manipulación en R</h1>
+<p><span style="color:#444442;"><strong>Manipulación en R</strong></span></p>
 </section>
 
 <section>
@@ -4485,8 +4485,8 @@ pesos       63   70   85   95</code></pre>
 <pre><code># A tibble: 2 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Rugor Na…    206    NA none       green      orange            NA male  mascu…
-2 R2-D2         96    32 &lt;NA&gt;       white, bl… red               33 none  mascu…
+1 Wilhuff …    180    NA auburn, g… fair       blue              64 male  mascu…
+2 Roos Tar…    224    82 none       grey       orange            NA male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -4531,10 +4531,10 @@ pesos       63   70   85   95</code></pre>
 <pre><code># A tibble: 4 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Grievous     216   159 none       brown, wh… green, y…       NA   male  mascu…
-2 Anakin S…    188    84 blond      fair       blue            41.9 male  mascu…
-3 Mas Amed…    196    NA none       blue       blue            NA   male  mascu…
-4 Arvel Cr…     NA    NA brown      fair       brown           NA   male  mascu…
+1 Obi-Wan …    182    77 auburn, w… fair       blue-gray         57 male  mascu…
+2 Roos Tar…    224    82 none       grey       orange            NA male  mascu…
+3 San Hill     191    NA none       grey       gold              NA male  mascu…
+4 Gregar T…    185    85 black      dark       brown             NA male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -4577,8 +4577,8 @@ pesos       63   70   85   95</code></pre>
 <pre><code># A tibble: 2 × 14
   name      height  mass hair_color skin_color eye_color birth_year sex   gender
   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-1 Luke Sky…    172    77 blond      fair       blue              19 male  mascu…
-2 C-3PO        167    75 &lt;NA&gt;       gold       yellow           112 none  mascu…
+1 C-3PO        167    75 &lt;NA&gt;       gold       yellow           112 none  mascu…
+2 Luke Sky…    172    77 blond      fair       blue              19 male  mascu…
 # ℹ 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
 </div>
@@ -4598,7 +4598,7 @@ pesos       63   70   85   95</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb445"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb445-1"><a href="#cb445-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 3 4 1 3 2 5 1 5 3 3</code></pre>
+<pre><code> [1] 2 3 6 1 2 6 5 3 2 3</code></pre>
 </div>
 </div>
 </div>
@@ -4610,8 +4610,8 @@ pesos       63   70   85   95</code></pre>
 <div class="sourceCode cell-code" id="cb447"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb447-1"><a href="#cb447-1"></a><span class="fu">sample</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb447-2"><a href="#cb447-2"></a>       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.05</span>, <span class="fl">0.05</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 2 1 4 4 4 4 2 2 1 4 1 1 6 5 2 1 1 3 1 2 3 5 2 2 4 1 1 1 2 2 3 3 1 1 1 1
-[39] 5 1 2 1 1 1 4 4 2 4 1 3</code></pre>
+<pre><code> [1] 2 1 1 1 2 6 1 6 1 1 1 1 3 2 3 1 1 5 3 3 2 1 2 2 4 4 1 4 1 3 5 1 3 1 1 2 4 1
+[39] 1 1 4 1 3 1 1 1 1 1 5 4</code></pre>
 </div>
 </div>
 </section>
@@ -6395,9 +6395,14 @@ dplyr 1.1.0.
 </ol>
 </div>
 </section></section>
+<section id="clase-4" class="title-slide slide level1 center">
+<h1>Clase 4: importar/exportar en R. Comunicar</h1>
+<p><span style="color:#444442;"><strong>Importar/exportar. Comunicar con Quarto</strong></span></p>
+</section>
+
 <section>
-<section id="clase-3-importar" class="title-slide slide level1 center">
-<h1>Clase 3: importar y exportar</h1>
+<section id="clase-4-importar" class="title-slide slide level1 center">
+<h1>Clase 4: importar y exportar</h1>
 <p><span style="color:#444442;"><strong>Repasando tidydata. Importar/exportar datos en R</strong></span></p>
 </section>
 <section id="importarexportar-datos" class="slide level2">
@@ -6431,6 +6436,12 @@ dplyr 1.1.0.
 <li><span class="hl-yellow"><strong>Datos desde API</strong></span>: Google Drive, aemet, catastro, twitter, spotify, etc</li>
 </ul>
 </div>
+</section>
+<section id="datos" class="slide level2">
+<h2>Datos</h2>
+<p>Puedes <span class="hl-yellow"><strong>descargar la carpeta de datos</strong></span> desde <a href="https://drive.google.com/drive/folders/1dILnwzBUM4ZLpN9SE976W-gtXxmlAKBu?usp=sharing">Google Drive</a>.</p>
+<p>&nbsp;</p>
+<p>Recuerda descomprimir la carpeta. Lo recomendable es crear un proyecto, donde guardes los scripts y los datos.</p>
 </section>
 <section id="formatos-nativos-de-r" class="slide level2">
 <h2>Formatos nativos de R</h2>
@@ -7020,20 +7031,20 @@ dplyr 1.1.0.
 <div class="cell">
 <div class="sourceCode cell-code" id="cb666"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb666-1"><a href="#cb666-1"></a><span class="fu">aemet_last_obs</span>(<span class="st">"0076"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 23 × 23
+<pre><code># A tibble: 24 × 23
    idema   lon fint                 prec   alt  vmax    vv    dv   lat  dmax
    &lt;chr&gt; &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 0076   2.07 2023-11-06 11:00:00     0     4   7.7   4.1   240  41.3   230
- 2 0076   2.07 2023-11-06 12:00:00     0     4   7.2   3.7   280  41.3   330
- 3 0076   2.07 2023-11-06 13:00:00     0     4   7.7   5.2   230  41.3   240
- 4 0076   2.07 2023-11-06 14:00:00     0     4   6.7   4.2   230  41.3   240
- 5 0076   2.07 2023-11-06 15:00:00     0     4   7.2   3.1   220  41.3   240
- 6 0076   2.07 2023-11-06 16:00:00     0     4   5.7   3.7   340  41.3   350
- 7 0076   2.07 2023-11-06 17:00:00     0     4   4.6   3.5   330  41.3   330
- 8 0076   2.07 2023-11-06 18:00:00     0     4   9.3   6.5    60  41.3    60
- 9 0076   2.07 2023-11-06 19:00:00     0     4   8.8   5.4    70  41.3    70
-10 0076   2.07 2023-11-06 20:00:00     0     4   9.3   3.4    50  41.3    50
-# ℹ 13 more rows
+ 1 0076   2.07 2023-11-13 15:00:00     0     4  10.3   7.4   240  41.3   250
+ 2 0076   2.07 2023-11-13 16:00:00     0     4   8.2   3.9   240  41.3   240
+ 3 0076   2.07 2023-11-13 17:00:00     0     4   9.3   6.7   260  41.3   250
+ 4 0076   2.07 2023-11-13 18:00:00     0     4   8.8   2.8   230  41.3   250
+ 5 0076   2.07 2023-11-13 19:00:00     0     4   4.6   3.3   250  41.3   240
+ 6 0076   2.07 2023-11-13 20:00:00     0     4   5.1   2.1   260  41.3   220
+ 7 0076   2.07 2023-11-13 21:00:00     0     4   4.1   3.2   260  41.3   240
+ 8 0076   2.07 2023-11-13 22:00:00     0     4   4.1   1.7   290  41.3   270
+ 9 0076   2.07 2023-11-13 23:00:00     0     4   4.1   2.2   240  41.3   190
+10 0076   2.07 2023-11-14 00:00:00     0     4   4.1   2.5   240  41.3   210
+# ℹ 14 more rows
 # ℹ 13 more variables: ubi &lt;chr&gt;, pres &lt;dbl&gt;, hr &lt;dbl&gt;, stdvv &lt;dbl&gt;, ts &lt;dbl&gt;,
 #   pres_nmar &lt;dbl&gt;, tamin &lt;dbl&gt;, ta &lt;dbl&gt;, tamax &lt;dbl&gt;, tpr &lt;dbl&gt;, vis &lt;dbl&gt;,
 #   stddv &lt;dbl&gt;, inso &lt;dbl&gt;</code></pre>
@@ -7105,8 +7116,8 @@ dplyr 1.1.0.
 </div>
 </section></section>
 <section>
-<section id="clase-3-qmd" class="title-slide slide level1 center">
-<h1>Clase 3: comunicar</h1>
+<section id="clase-4-qmd" class="title-slide slide level1 center">
+<h1>Clase 4: comunicar</h1>
 <p><span style="color:#444442;"><strong>Comunicar resultados: rmd y Quarto</strong></span></p>
 </section>
 <section id="comunicar-rmd-y-quarto" class="slide level2">
@@ -7437,9 +7448,568 @@ dplyr 1.1.0.
 <ol start="3" type="1">
 <li>¿Cuál de los dos tipos de tumores tienen, de media, un radio más elevado?</li>
 </ol>
+</div>
+</section></section>
+<section>
+<section id="clase-4-funciones" class="title-slide slide level1 center">
+<h1>Clase 4: funciones</h1>
+<p><span style="color:#444442;"><strong>¿Qué es una función? ¿Cómo se definen?</strong></span></p>
+</section>
+<section id="creando-funciones" class="slide level2">
+<h2>Creando funciones</h2>
+<p>No solo podemos usar <strong>funciones predeterminadas</strong> que vienen ya cargadas en paquetes, además podemos <span class="hl-yellow"><strong>crear nuestras propias funciones</strong></span> para <strong>automatizar tareas</strong>.</p>
+<p>¿Cómo <span class="hl-purple"><strong>crear nuestra propia función</strong></span>? Veamos su <strong>esquema básico</strong>:</p>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Nombre</strong></span>: por ejemplo <code>name_fun</code> (sin espacios ni caracteres extraños). Al nombre le <span class="hl-yellow"><strong>asignamos la palabra reservada</strong></span> <code>function()</code>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Definir <span class="hl-yellow"><strong>argumentos de entrada</strong></span> (dentro de <code>function()</code>).</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb675"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb675-1"><a href="#cb675-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
+<span id="cb675-2"><a href="#cb675-2"></a>  </span>
+<span id="cb675-3"><a href="#cb675-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="creando-funciones-1" class="slide level2">
+<h2>Creando funciones</h2>
+<p>No solo podemos usar <strong>funciones predeterminadas</strong> que vienen ya cargadas en paquetes, además podemos <span class="hl-yellow"><strong>crear nuestras propias funciones</strong></span> para <strong>automatizar tareas</strong>.</p>
+<p>¿Cómo <span class="hl-purple"><strong>crear nuestra propia función</strong></span>? Veamos su <strong>esquema básico</strong>:</p>
+<ul>
+<li><span class="hl-yellow"><strong>Cuerpo</strong></span> de la función dentro de <code>{ }</code>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Finalizamos la función con los <span class="hl-yellow"><strong>argumentos de salida</strong></span> con <code>return()</code>.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb676"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb676-1"><a href="#cb676-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
+<span id="cb676-2"><a href="#cb676-2"></a>  </span>
+<span id="cb676-3"><a href="#cb676-3"></a>  <span class="co"># Código que queramos ejecutar</span></span>
+<span id="cb676-4"><a href="#cb676-4"></a>  código</span>
+<span id="cb676-5"><a href="#cb676-5"></a>  </span>
+<span id="cb676-6"><a href="#cb676-6"></a>  <span class="co"># Salida</span></span>
+<span id="cb676-7"><a href="#cb676-7"></a>  <span class="fu">return</span>(var_salida)</span>
+<span id="cb676-8"><a href="#cb676-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="creando-funciones-2" class="slide level2">
+<h2>Creando funciones</h2>
+<ul>
+<li><p><code>arg1, arg2, ...</code>: serán los <span class="hl-yellow"><strong>argumentos de entrada</strong></span>, los argumentos que toma la función para ejecutar el código que tiene dentro</p></li>
+<li><p><code>código</code>: líneas de código que queramos que <span class="hl-yellow"><strong>ejecute la función</strong></span>.</p></li>
+<li><p><code>return(var_salida)</code>: se introducirán los <span class="hl-yellow"><strong>argumentos de salida</strong></span>.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb677"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb677-1"><a href="#cb677-1"></a>name_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
+<span id="cb677-2"><a href="#cb677-2"></a>  </span>
+<span id="cb677-3"><a href="#cb677-3"></a>  <span class="co"># Código que queramos ejecutar</span></span>
+<span id="cb677-4"><a href="#cb677-4"></a>  código</span>
+<span id="cb677-5"><a href="#cb677-5"></a>  </span>
+<span id="cb677-6"><a href="#cb677-6"></a>  <span class="co"># Salida</span></span>
+<span id="cb677-7"><a href="#cb677-7"></a>  <span class="fu">return</span>(var_salida)</span>
+<span id="cb677-8"><a href="#cb677-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>Todas las variables que definamos dentro de la función son <span class="hl-yellow"><strong>variables locales: solo existirán dentro de la función</strong></span> salvo que especifiquemos lo contrario.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="creando-funciones-3" class="slide level2">
+<h2>Creando funciones</h2>
+<p>Veamos un ejemplo muy simple de función para <span class="hl-yellow"><strong>calcular el área de un rectángulo</strong></span>.</p>
+<div class="fragment">
+<p>Dado que el área de un rectángulo se calcula como el <strong>producto de sus lados</strong>, necesitaremos precisamente eso, sus lados: esos serán los <span class="hl-yellow"><strong>argumentos de entrada</strong></span> y el <span class="hl-purple"><strong>valor a devolver</strong></span> será justo su <strong>área</strong> (<span class="math inline">\(lado_1 * lado_2\)</span>).</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb678"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb678-1"><a href="#cb678-1"></a><span class="co"># Definición del nombre de función y argumentos de entrada</span></span>
+<span id="cb678-2"><a href="#cb678-2"></a>calcular_area <span class="ot">&lt;-</span> <span class="cf">function</span>(lado_1, lado_2) {</span>
+<span id="cb678-3"><a href="#cb678-3"></a>  </span>
+<span id="cb678-4"><a href="#cb678-4"></a>  area <span class="ot">&lt;-</span> lado_1 <span class="sc">*</span> lado_2</span>
+<span id="cb678-5"><a href="#cb678-5"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb678-6"><a href="#cb678-6"></a>  </span>
+<span id="cb678-7"><a href="#cb678-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="creando-funciones-4" class="slide level2">
+<h2>Creando funciones</h2>
+<p>También podemos hacer una definición directa, <strong>sin almacenar variables por el camino</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb679"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb679-1"><a href="#cb679-1"></a><span class="co"># Definición del nombre de función y argumentos de entrada</span></span>
+<span id="cb679-2"><a href="#cb679-2"></a>calcular_area <span class="ot">&lt;-</span> <span class="cf">function</span>(lado_1, lado_2) {</span>
+<span id="cb679-3"><a href="#cb679-3"></a>  </span>
+<span id="cb679-4"><a href="#cb679-4"></a>  <span class="fu">return</span>(lado_1 <span class="sc">*</span> lado_2)</span>
+<span id="cb679-5"><a href="#cb679-5"></a>  </span>
+<span id="cb679-6"><a href="#cb679-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span class="hl-yellow"><strong>¿Cómo aplicar la función?</strong></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb680"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb680-1"><a href="#cb680-1"></a><span class="fu">calcular_area</span>(<span class="dv">5</span>, <span class="dv">3</span>) <span class="co"># área de un rectángulo 5 x 3 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb682"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb682-1"><a href="#cb682-1"></a><span class="fu">calcular_area</span>(<span class="dv">1</span>, <span class="dv">5</span>) <span class="co"># área de un rectángulo 1 x 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="argumentos-por-defecto" class="slide level2">
+<h2>Argumentos por defecto</h2>
+<p>Imagina ahora que nos damos cuenta que el 90% de las veces usamos dicha función para <span class="hl-yellow"><strong>calcular por defecto el área de un cuadrado</strong></span> (es decir, solo necesitamos un lado). Para ello, podemos definir <span class="hl-yellow"><strong>argumentos por defecto</strong></span> en la función: tomarán dicho valor salvo que le asignemos otro.</p>
+<p>¿Por qué no asignar <code>lado_2 = lado_1</code> por defecto, para ahorrar líneas de código y tiempo?</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb684"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb684-1"><a href="#cb684-1"></a>calcular_area <span class="ot">&lt;-</span> <span class="cf">function</span>(lado_1, <span class="at">lado_2 =</span> lado_1) {</span>
+<span id="cb684-2"><a href="#cb684-2"></a>  </span>
+<span id="cb684-3"><a href="#cb684-3"></a>  <span class="co"># Cuerpo de la función</span></span>
+<span id="cb684-4"><a href="#cb684-4"></a>  area <span class="ot">&lt;-</span> lado_1 <span class="sc">*</span> lado_2</span>
+<span id="cb684-5"><a href="#cb684-5"></a>  </span>
+<span id="cb684-6"><a href="#cb684-6"></a>  <span class="co"># Resultado que devolvemos</span></span>
+<span id="cb684-7"><a href="#cb684-7"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb684-8"><a href="#cb684-8"></a>  </span>
+<span id="cb684-9"><a href="#cb684-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="argumentos-por-defecto-1" class="slide level2">
+<h2>Argumentos por defecto</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb685"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb685-1"><a href="#cb685-1"></a>calcular_area <span class="ot">&lt;-</span> <span class="cf">function</span>(lado_1, <span class="at">lado_2 =</span> lado_1) {</span>
+<span id="cb685-2"><a href="#cb685-2"></a>  </span>
+<span id="cb685-3"><a href="#cb685-3"></a>  <span class="co"># Cuerpo de la función</span></span>
+<span id="cb685-4"><a href="#cb685-4"></a>  area <span class="ot">&lt;-</span> lado_1 <span class="sc">*</span> lado_2</span>
+<span id="cb685-5"><a href="#cb685-5"></a>  </span>
+<span id="cb685-6"><a href="#cb685-6"></a>  <span class="co"># Resultado que devolvemos</span></span>
+<span id="cb685-7"><a href="#cb685-7"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb685-8"><a href="#cb685-8"></a>  </span>
+<span id="cb685-9"><a href="#cb685-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ahora <span class="hl-yellow"><strong>por defecto</strong></span> el segundo lado será igual al primero (si se lo añadimos usará ambos).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb686"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb686-1"><a href="#cb686-1"></a><span class="fu">calcular_area</span>(<span class="at">lado_1 =</span> <span class="dv">5</span>) <span class="co"># cuadrado</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb688"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb688-1"><a href="#cb688-1"></a><span class="fu">calcular_area</span>(<span class="at">lado_1 =</span> <span class="dv">5</span>, <span class="at">lado_2 =</span> <span class="dv">7</span>) <span class="co"># rectángulo</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 35</code></pre>
+</div>
+</div>
+</section>
+<section id="salida-múltiple" class="slide level2">
+<h2>Salida múltiple</h2>
+<p>Compliquemos un poco la función y añadamos en la salida los valores de cada lado, etiquetados como <code>lado_1</code> y <code>lado_2</code>, <span class="hl-yellow"><strong>empaquetando la salida en una lista</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb690"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb690-1"><a href="#cb690-1"></a><span class="co"># Definición del nombre de función y argumentos de entrada</span></span>
+<span id="cb690-2"><a href="#cb690-2"></a>calcular_area <span class="ot">&lt;-</span> <span class="cf">function</span>(lado_1, <span class="at">lado_2 =</span> lado_1) {</span>
+<span id="cb690-3"><a href="#cb690-3"></a>  </span>
+<span id="cb690-4"><a href="#cb690-4"></a>  <span class="co"># Cuerpo de la función</span></span>
+<span id="cb690-5"><a href="#cb690-5"></a>  area <span class="ot">&lt;-</span> lado_1 <span class="sc">*</span> lado_2</span>
+<span id="cb690-6"><a href="#cb690-6"></a>  </span>
+<span id="cb690-7"><a href="#cb690-7"></a>  <span class="co"># Resultado</span></span>
+<span id="cb690-8"><a href="#cb690-8"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">"area"</span> <span class="ot">=</span> area, <span class="st">"lado_1"</span> <span class="ot">=</span> lado_1, <span class="st">"lado_2"</span> <span class="ot">=</span> lado_2))</span>
+<span id="cb690-9"><a href="#cb690-9"></a>  </span>
+<span id="cb690-10"><a href="#cb690-10"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="introducción-a-listas" class="slide level2">
+<h2>Introducción a listas</h2>
+<p>Veamos un pequeño resumen de los datos que ya conocemos:</p>
+<ul>
+<li><p><span class="hl-yellow"><strong>vectores</strong></span>: colección de elementos de igual tipo. Pueden ser números, caracteres o valores lógicos, entre otros.</p></li>
+<li><p><span class="hl-yellow"><strong>matrices</strong></span>: colección BIDIMENSIONAL de elementos de igual tipo e igual longitud.</p></li>
+<li><p><span class="hl-yellow"><strong>data.frame / tibble</strong></span>: colección BIDIMENSIONAL de elementos de igual longitud pero de cualquier tipo.</p></li>
+</ul>
+<div class="fragment">
+<p>Las <span class="hl-yellow"><strong>listas</strong></span> serán <span class="hl-purple"><strong>colecciones de variables de diferente tipo y diferente longitud</strong></span>, con estructuras totalmente heterógeneas (incluso una lista puede tener dentro a su vez otra lista).</p>
+</div>
+</section>
+<section id="introducción-a-listas-1" class="slide level2">
+<h2>Introducción a listas</h2>
+<p>Vamos a crear <span class="hl-yellow"><strong>nuestra primera lista</strong></span> con <code>list()</code> con tres elementos: el nombre de nuestros padres/madres, nuestro lugar de nacimiento y edades de nuestros hermanos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb691"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb691-1"><a href="#cb691-1"></a>variable_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Paloma"</span>, <span class="st">"Gregorio"</span>)</span>
+<span id="cb691-2"><a href="#cb691-2"></a>variable_2 <span class="ot">&lt;-</span> <span class="st">"Madrid"</span></span>
+<span id="cb691-3"><a href="#cb691-3"></a>variable_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">26</span>)</span>
+<span id="cb691-4"><a href="#cb691-4"></a></span>
+<span id="cb691-5"><a href="#cb691-5"></a>lista <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">"progenitores"</span> <span class="ot">=</span> variable_1, <span class="st">"lugar_nacimiento"</span> <span class="ot">=</span> variable_2,</span>
+<span id="cb691-6"><a href="#cb691-6"></a>              <span class="st">"edades_hermanos"</span> <span class="ot">=</span> variable_3)</span>
+<span id="cb691-7"><a href="#cb691-7"></a>lista</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$progenitores
+[1] "Paloma"   "Gregorio"
+
+$lugar_nacimiento
+[1] "Madrid"
+
+$edades_hermanos
+[1] 25 30 26</code></pre>
+</div>
+</div>
+</section>
+<section id="introducción-a-listas-2" class="slide level2">
+<h2>Introducción a listas</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb693"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb693-1"><a href="#cb693-1"></a><span class="fu">length</span>(lista)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>Si observas el objeto que hemos definido como lista, su <span class="hl-yellow"><strong>longitud</strong></span> del es de 3 ya que tenemos <strong>guardados tres elementos</strong>: un vector de caracteres (de longitud 2), un caracter (vector de longitud 1), y un vector de números (de longitud 3)</p>
+<div class="fragment">
+<p>Tenemos guardados elementos de <span class="hl-yellow"><strong>distinto tipo</strong></span> (algo que ya podíamos hacer) pero, además, de <strong>longitudes dispares</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb695"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb695-1"><a href="#cb695-1"></a><span class="fu">dim</span>(lista) <span class="co"># devolverá NULL al no tener dos dimensiones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb697"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb697-1"><a href="#cb697-1"></a><span class="fu">class</span>(lista) <span class="co"># de tipo lista</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "list"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="introducción-a-listas-3" class="slide level2">
+<h2>Introducción a listas</h2>
+<p>Si los juntásemos con un <code>tibble()</code>, al tener distinta longitud, obtendríamos un <span class="hl-red"><strong>error</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb699"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb699-1"><a href="#cb699-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb699-2"><a href="#cb699-2"></a><span class="fu">tibble</span>(<span class="st">"progenitores"</span> <span class="ot">=</span> variable_1,</span>
+<span id="cb699-3"><a href="#cb699-3"></a>       <span class="st">"lugar_nacimiento"</span> <span class="ot">=</span> variable_2,</span>
+<span id="cb699-4"><a href="#cb699-4"></a>       <span class="st">"edades_hermanos"</span> <span class="ot">=</span> variable_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `tibble()`:
+! Tibble columns must have compatible sizes.
+• Size 2: Existing data.
+• Size 3: Column `edades_hermanos`.
+ℹ Only values of size one are recycled.</code></pre>
+</div>
+</div>
+</section>
+<section id="introducción-a-listas-4" class="slide level2">
+<h2>Introducción a listas</h2>
+<ul>
+<li><span class="hl-yellow"><strong>Acceder por índice</strong></span>: con el operador <code>[[i]]</code> accedemos al <strong>elemento i-ésimo</strong> de la lista.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb701"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb701-1"><a href="#cb701-1"></a>lista[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Paloma"   "Gregorio"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="hl-yellow"><strong>Acceder por nombre</strong></span>: con el operador <code>$nombre_elemento</code> accedemos por su nombre.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb703"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb703-1"><a href="#cb703-1"></a>lista<span class="sc">$</span>progenitores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Paloma"   "Gregorio"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>En contraposición, el <span class="hl-yellow"><strong>corchete simple</strong></span> nos permite acceder a <span class="hl-yellow"><strong>varios elementos</strong></span> a la vez</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb705"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb705-1"><a href="#cb705-1"></a><span class="co"># Varios elementos</span></span>
+<span id="cb705-2"><a href="#cb705-2"></a>lista[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$progenitores
+[1] "Paloma"   "Gregorio"
+
+$lugar_nacimiento
+[1] "Madrid"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="salida-múltiple-1" class="slide level2">
+<h2>Salida múltiple</h2>
+<p>Antes nos daba igual el orden de los argumentos pero ahora el <span class="hl-yellow"><strong>orden de los argumentos de entrada importa</strong></span>, ya que en la salida incluimos <code>lado_1</code> y <code>lado_2</code>.</p>
+<div class="fragment">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Recomendación</strong></p>
+</div>
+<div class="callout-content">
+<p>Es altamente recomendable hacer la llamada a la función <span class="hl-yellow"><strong>indicando explícitamente los argumentos</strong></span> para mejorar la <strong>legibilidad e interpretabilidad</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb707"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb707-1"><a href="#cb707-1"></a><span class="co"># Equivalente a calcular_area(5, 3)</span></span>
+<span id="cb707-2"><a href="#cb707-2"></a><span class="fu">calcular_area</span>(<span class="at">lado_1 =</span> <span class="dv">5</span>, <span class="at">lado_2 =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$area
+[1] 15
+
+$lado_1
+[1] 5
+
+$lado_2
+[1] 3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="funciones-generando-conocimiento" class="slide level2">
+<h2>Funciones: generando conocimiento</h2>
+<p>Parece una tontería lo que hemos hecho pero hemos cruzado una frontera importante: hemos pasado de <span class="hl-yellow"><strong>consumir conocimiento</strong></span> (código de otros paquetes, elaborado por otros/as), a <span class="hl-purple"><strong>generar conocimiento</strong></span>, creando nuestras propias funciones.</p>
+</section>
+<section id="variables-locales-vs-globales" class="slide level2">
+<h2>Variables locales vs globales</h2>
+<p>Un aspecto importante sobre el que reflexionar con las funciones: ¿qué sucede si <span class="hl-yellow"><strong>nombramos a una variable dentro</strong></span> de una función a la que se nos ha <strong>olvidado asignar</strong> un valor dentro de la misma?</p>
+<div class="fragment">
+<p>Debemos ser cautos al usar funciones en <code>R</code>, ya que debido a la <span class="hl-yellow"><strong>«regla lexicográfica»</strong></span>, si una variable no se define dentro de la función, <code>R</code> <span class="hl-purple"><strong>buscará dicha variable en el entorno</strong></span> de variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb709"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb709-1"><a href="#cb709-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb709-2"><a href="#cb709-2"></a>funcion_ejemplo <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb709-3"><a href="#cb709-3"></a>    </span>
+<span id="cb709-4"><a href="#cb709-4"></a>  <span class="fu">print</span>(x) <span class="co"># No devuelve nada, solo realiza la acción </span></span>
+<span id="cb709-5"><a href="#cb709-5"></a>}</span>
+<span id="cb709-6"><a href="#cb709-6"></a><span class="fu">funcion_ejemplo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="variables-locales-vs-globales-1" class="slide level2">
+<h2>Variables locales vs globales</h2>
+<p>Si una variable <span class="hl-yellow"><strong>ya está definida fuera de la función (entorno global)</strong></span>, y además es usada dentro de cambiando su valor, el valor <span class="hl-yellow"><strong>solo cambia dentro</strong></span> pero <span class="hl-red"><strong>no en el entorno global</strong></span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb711"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb711-1"><a href="#cb711-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb711-2"><a href="#cb711-2"></a>funcion_ejemplo <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb711-3"><a href="#cb711-3"></a>    </span>
+<span id="cb711-4"><a href="#cb711-4"></a>  x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb711-5"><a href="#cb711-5"></a>  <span class="fu">print</span>(x) <span class="co"># lo que vale dentro</span></span>
+<span id="cb711-6"><a href="#cb711-6"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb712"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb712-1"><a href="#cb712-1"></a><span class="co"># lo que vale dentro</span></span>
+<span id="cb712-2"><a href="#cb712-2"></a><span class="fu">funcion_ejemplo</span>() <span class="co">#&lt;&lt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb714"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb714-1"><a href="#cb714-1"></a><span class="co"># lo que vale fuera</span></span>
+<span id="cb714-2"><a href="#cb714-2"></a><span class="fu">print</span>(x) <span class="co">#&lt;&lt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="variables-locales-vs-globales-2" class="slide level2">
+<h2>Variables locales vs globales</h2>
+<p>Si queremos que además de cambiar localmente lo haga <span class="hl-yellow"><strong>globalmente</strong></span> deberemos usar la <span class="hl-yellow"><strong>doble asignación</strong></span> (<code>&lt;&lt;-</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb716"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb716-1"><a href="#cb716-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb716-2"><a href="#cb716-2"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb716-3"><a href="#cb716-3"></a>funcion_ejemplo <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb716-4"><a href="#cb716-4"></a>  </span>
+<span id="cb716-5"><a href="#cb716-5"></a>  <span class="co"># no cambia globalmente, solo localmente</span></span>
+<span id="cb716-6"><a href="#cb716-6"></a>  x <span class="ot">&lt;-</span> <span class="dv">3</span> </span>
+<span id="cb716-7"><a href="#cb716-7"></a>  <span class="co"># cambia globalmente</span></span>
+<span id="cb716-8"><a href="#cb716-8"></a>  y <span class="ot">&lt;&lt;-</span> <span class="dv">0</span> <span class="co">#&lt;&lt;</span></span>
+<span id="cb716-9"><a href="#cb716-9"></a>  </span>
+<span id="cb716-10"><a href="#cb716-10"></a>  <span class="fu">print</span>(x)</span>
+<span id="cb716-11"><a href="#cb716-11"></a>  <span class="fu">print</span>(y)</span>
+<span id="cb716-12"><a href="#cb716-12"></a>}</span>
+<span id="cb716-13"><a href="#cb716-13"></a></span>
+<span id="cb716-14"><a href="#cb716-14"></a><span class="fu">funcion_ejemplo</span>() <span class="co"># lo que vale dentro</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3
+[1] 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb718"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb718-1"><a href="#cb718-1"></a>x <span class="co"># lo que vale fuera</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb720"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb720-1"><a href="#cb720-1"></a>y <span class="co"># lo que vale fuera</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="tu-turno-9" class="slide level2">
+<h2>💻 Tu turno</h2>
+<p><span style="color:#444442;"><strong>Intenta realizar los siguientes ejercicios sin mirar las soluciones</strong></span></p>
+<div class="panel-tabset">
+<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1"><span class="hl-yellow"><strong>Ejercicio 1</strong></span></a></li><li><a href="#tabset-15-2"><span class="hl-yellow"><strong>Ejercicio 2</strong></span></a></li><li><a href="#tabset-15-3"><span class="hl-yellow"><strong>Ejercicio 3</strong></span></a></li><li><a href="#tabset-15-4"><span class="hl-yellow"><strong>Ejercicio 4</strong></span></a></li><li><a href="#tabset-15-5"><span class="hl-yellow"><strong>Ejercicio 5</strong></span></a></li><li><a href="#tabset-15-6"><span class="hl-yellow"><strong>Ejercicio 6</strong></span></a></li></ul>
+<div class="tab-content">
+<div id="tabset-15-1">
+<p>📝 Modifica el código inferior para definir una función llamada <code>funcion_suma</code>, de forma que dados dos elementos, devuelve su suma.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb722"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb722-1"><a href="#cb722-1"></a>nombre <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb722-2"><a href="#cb722-2"></a>  suma <span class="ot">&lt;-</span> <span class="co"># código a ejecutar</span></span>
+<span id="cb722-3"><a href="#cb722-3"></a>  <span class="fu">return</span>()</span>
+<span id="cb722-4"><a href="#cb722-4"></a>}</span>
+<span id="cb722-5"><a href="#cb722-5"></a><span class="co"># Aplicamos la función</span></span>
+<span id="cb722-6"><a href="#cb722-6"></a><span class="fu">suma</span>(<span class="dv">3</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb723"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb723-1"><a href="#cb723-1"></a>funcion_suma <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb723-2"><a href="#cb723-2"></a>  suma <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb723-3"><a href="#cb723-3"></a>  <span class="fu">return</span>(suma)</span>
+<span id="cb723-4"><a href="#cb723-4"></a>}</span>
+<span id="cb723-5"><a href="#cb723-5"></a><span class="fu">funcion_suma</span>(<span class="dv">3</span>, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-2">
+<p>📝 Modifica el código inferior para definir una función llamada <code>funcion_producto</code>, de forma que dados dos elementos, devuelve su producto, pero que por defecto calcule el cuadrado</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb724"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb724-1"><a href="#cb724-1"></a>nombre <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb724-2"><a href="#cb724-2"></a>  producto <span class="ot">&lt;-</span> <span class="co"># código de la multiplicación</span></span>
+<span id="cb724-3"><a href="#cb724-3"></a>  <span class="fu">return</span>()</span>
+<span id="cb724-4"><a href="#cb724-4"></a>}</span>
+<span id="cb724-5"><a href="#cb724-5"></a><span class="fu">producto</span>(<span class="dv">3</span>)</span>
+<span id="cb724-6"><a href="#cb724-6"></a><span class="fu">producto</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb725"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb725-1"><a href="#cb725-1"></a>funcion_producto <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> x) {</span>
+<span id="cb725-2"><a href="#cb725-2"></a>  producto <span class="ot">&lt;-</span> x <span class="sc">*</span> y</span>
+<span id="cb725-3"><a href="#cb725-3"></a>  <span class="fu">return</span>(producto)</span>
+<span id="cb725-4"><a href="#cb725-4"></a>}</span>
+<span id="cb725-5"><a href="#cb725-5"></a><span class="fu">funcion_producto</span>(<span class="dv">3</span>)</span>
+<span id="cb725-6"><a href="#cb725-6"></a><span class="fu">funcion_producto</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-3">
+<p>📝 Define una función llamada <code>igualdad_nombres</code> que, dados dos nombres, nos diga si son iguales o no. Hazlo considerando importantes las mayúsculas, y sin que importen las mayúsculas. Echa un vistazo al paquete <code>{stringr}</code>.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb726"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb726-1"><a href="#cb726-1"></a><span class="co"># Distinguiendo mayúsculas</span></span>
+<span id="cb726-2"><a href="#cb726-2"></a>igualdad_nombres <span class="ot">&lt;-</span> <span class="cf">function</span>(persona_1, persona_2) {</span>
+<span id="cb726-3"><a href="#cb726-3"></a>  <span class="fu">return</span>(persona_1 <span class="sc">==</span> persona_2)</span>
+<span id="cb726-4"><a href="#cb726-4"></a>}</span>
+<span id="cb726-5"><a href="#cb726-5"></a><span class="fu">igualdad_nombres</span>(<span class="st">"Javi"</span>, <span class="st">"javi"</span>)</span>
+<span id="cb726-6"><a href="#cb726-6"></a><span class="fu">igualdad_nombres</span>(<span class="st">"Javi"</span>, <span class="st">"Lucía"</span>)</span>
+<span id="cb726-7"><a href="#cb726-7"></a></span>
+<span id="cb726-8"><a href="#cb726-8"></a><span class="co"># Sin importar mayúsculas</span></span>
+<span id="cb726-9"><a href="#cb726-9"></a>igualdad_nombres <span class="ot">&lt;-</span> <span class="cf">function</span>(persona_1, persona_2) {</span>
+<span id="cb726-10"><a href="#cb726-10"></a>  <span class="fu">return</span>(<span class="fu">toupper</span>(persona_1) <span class="sc">==</span> <span class="fu">toupper</span>(persona_2))</span>
+<span id="cb726-11"><a href="#cb726-11"></a>}</span>
+<span id="cb726-12"><a href="#cb726-12"></a><span class="fu">igualdad_nombres</span>(<span class="st">"Javi"</span>, <span class="st">"javi"</span>)</span>
+<span id="cb726-13"><a href="#cb726-13"></a><span class="fu">igualdad_nombres</span>(<span class="st">"Javi"</span>, <span class="st">"Lucía"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-4">
+<p>📝 Crea una función llamada <code>calculo_IMC</code> que, dados dos argumentos (peso y estatura en metros) y un nombre, devuelva una lista con el IMC y el nombre.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb727"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb727-1"><a href="#cb727-1"></a>calculo_IMC <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre, peso, estatura) {</span>
+<span id="cb727-2"><a href="#cb727-2"></a>  </span>
+<span id="cb727-3"><a href="#cb727-3"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">"nombre"</span> <span class="ot">=</span> nombre, <span class="st">"IMC"</span> <span class="ot">=</span> peso<span class="sc">/</span>(estatura<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb727-4"><a href="#cb727-4"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-5">
+<p>📝 Repite el ejercicio anterior pero con otro argumento opcional que se llame unidades (por defecto, <code>unidades = "metros"</code>). Desarrolla la función de forma que haga lo correcto si <code>unidades = "metros"</code> y si <code>unidades = "centímetros"</code>.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb728"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb728-1"><a href="#cb728-1"></a>calculo_IMC <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre, peso, estatura, <span class="at">unidades =</span> <span class="st">"metros"</span>) {</span>
+<span id="cb728-2"><a href="#cb728-2"></a>  </span>
+<span id="cb728-3"><a href="#cb728-3"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">"nombre"</span> <span class="ot">=</span> nombre,</span>
+<span id="cb728-4"><a href="#cb728-4"></a>              <span class="st">"IMC"</span> <span class="ot">=</span> peso<span class="sc">/</span>(<span class="fu">if_else</span>(unidades <span class="sc">==</span> <span class="st">"metros"</span>, estatura, estatura<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb728-5"><a href="#cb728-5"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+<div id="tabset-15-6">
+<p>📝 Crea un tibble ficticio de 7 personas, con tres variables (inventa nombre, y simula peso, estatura en centímetros), y aplica la función definida de forma que obtengamos una cuarta columna con su IMC.</p>
+<div class="cell">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb729"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb729-1"><a href="#cb729-1"></a>datos <span class="ot">&lt;-</span></span>
+<span id="cb729-2"><a href="#cb729-2"></a>  <span class="fu">tibble</span>(<span class="st">"nombres"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"javi"</span>, <span class="st">"sandra"</span>, <span class="st">"laura"</span>,</span>
+<span id="cb729-3"><a href="#cb729-3"></a>                       <span class="st">"ana"</span>, <span class="st">"carlos"</span>, <span class="st">"leo"</span>, <span class="cn">NA</span>),</span>
+<span id="cb729-4"><a href="#cb729-4"></a>         <span class="st">"peso"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">1</span>),</span>
+<span id="cb729-5"><a href="#cb729-5"></a>         <span class="st">"estatura"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">168</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb729-6"><a href="#cb729-6"></a></span>
+<span id="cb729-7"><a href="#cb729-7"></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb729-8"><a href="#cb729-8"></a>  <span class="fu">mutate</span>(<span class="at">IMC =</span> <span class="fu">calculo_IMC</span>(nombres, peso, estatura, <span class="at">unidades =</span> <span class="st">"centímetros"</span>)<span class="sc">$</span>IMC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="caso10a" class="slide level2">
+<h2>🐣 Caso práctico 10: funciones</h2>
+<p>Define una función llamada <code>conversor_temperatura</code> que, dada una temperatura en Fahrenheit, Celsius o Kelvin, la convierta a cualquiera de las otras (piensa que argumentos necesita el usuario). Aplica la función a la columna <code>Temp</code> del conjunto <code>airquality</code>, e incorpórala al fichero en una nueva columna <code>Temp_Celsius</code>.</p>
+</section>
+<section id="caso10b" class="slide level2">
+<h2>🐣 Caso práctico 10: tidyverse</h2>
+<p>Acude a <a href="https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos" class="uri">https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos</a> e importa <code>casos_hosp_uci_def_sexo_edad_provres.csv</code>. Documentación en <a href="https://cnecovid.isciii.es/covid19/resources/metadata_casos_hosp_uci_def_sexo_edad_provres.pdf" class="uri">https://cnecovid.isciii.es/covid19/resources/metadata_casos_hosp_uci_def_sexo_edad_provres.pdf</a></p>
+<div class="fragment">
+<ol type="1">
+<li>¿Cuántos casos hay notificados para edad desconocida? ¿Y desagregado por sexo? Recodifica adecuadamente las provincias</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>Dado su escaso peso en el total, genera una nueva base de datos en la que borremos aquellos registros con franja de edad desconocida.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li>Con la base de datos generada en el ejercicio anterior, calcula la proporción de casos con sexo desconocido. Haz lo mismo con provincia desconocida. Elimina dichos registros si el número de casos representa menos del 1% (para cada una).</li>
+</ol>
+</div>
+</section>
+<section id="caso-práctico-10-tidyverse" class="slide level2">
+<h2>🐣 Caso práctico 10: tidyverse</h2>
+<ol start="4" type="1">
+<li>Del dataset anterior, elimina la variables de hospitalizados y UCI. Tras ello renombra las columnas de casos y fallecidos por <code>casos_diarios</code> y <code>fallec_diarios</code>, respectivamente. Tras ello crea dos nuevas variables llamadas <code>casos_acum</code> y otra <code>fallec_acum</code>, que contengan los casos acumulados y fallecidos acumulados para cada fecha, desagregados por provincia, tramo etario y sexo.</li>
+</ol>
+<div class="fragment">
+<ol start="5" type="1">
+<li>¿Cuáles fueron las 7 provincias con más casos a lo largo de toda la pandemia? ¿Y las 5 provincias con menos fallecidos? ¿Y si lo desagregamos por sexo?</li>
+</ol>
+</div>
+</section>
+<section id="caso-práctico-10-tidyverse-1" class="slide level2">
+<h2>🐣 Caso práctico 10: tidyverse</h2>
+<ol start="6" type="1">
+<li>Define una función llamada <code>calculo_letalidad()</code> que, dados como argumentos un vector ordenado (por fecha) de casos y otro de fallecidos, devuelva el % de casos que han fallecido, de manera acumulada en cada fecha. Haz uso de dicha función y crea una nueva variable que represente la letalidad, en cada grupo de edad, sexo y provincia.</li>
+</ol>
+<p>Tras ello, determina las 5 provincias con mayor letalidad en mujeres mayores de 80 años a fecha 01 de marzo de 2022.</p>
 <div class="footer footer-default">
 <p><a href="..."><strong>Javier Álvarez Liébana</strong></a> • Curso para el Ayuntamiento de Madrid • curso 2023-2024</p>
-</div>
 </div>
 </section></section>
     </div>

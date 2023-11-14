@@ -3016,9 +3016,9 @@ who
 
 
 
-# Clase 3: importar/exportar y manipulación en R {#clase-3}
+# Clase 3: manipulación en R {#clase-3}
 
-[**importar/exportar. Manipulación en R**]{style="color:#444442;"}
+[**Manipulación en R**]{style="color:#444442;"}
 
 
 # Clase 3: tidyverse (filas) {#clase-3-tidyverse-filas}
@@ -5541,8 +5541,12 @@ Puedes ver la documentación en <https://vincentarelbundock.github.io/Rdatasets/
 
 5. Del dataset anterior obtén una [**muestra del 20% de los datos**]{.hl-yellow} (cada registro puede ser elegido con la misma probabilidad), y [**órdenalos**]{.hl-yellow} por de mayor a menor por la variable `V1` y, en caso de empate, de menor a mayor por la variable `V2`
 
+# Clase 4: importar/exportar en R. Comunicar {#clase-4}
 
-# Clase 3: importar y exportar {#clase-3-importar}
+[**Importar/exportar. Comunicar con Quarto**]{style="color:#444442;"}
+
+
+# Clase 4: importar y exportar {#clase-4-importar}
 
 [**Repasando tidydata. Importar/exportar datos en R**]{style="color:#444442;"}
 
@@ -5579,6 +5583,17 @@ Hasta ahora solo hemos usado datos cargados ya en paquetes pero muchas veces [**
 
 
 ---
+
+## Datos
+
+Puedes [**descargar la carpeta de datos**]{.hl-yellow} desde [Google Drive](https://drive.google.com/drive/folders/1dILnwzBUM4ZLpN9SE976W-gtXxmlAKBu?usp=sharing). 
+
+&nbsp;
+
+Recuerda descomprimir la carpeta. Lo recomendable es crear un proyecto, donde guardes los scripts y los datos.
+
+---
+
 
 ## Formatos nativos de R
 
@@ -6193,7 +6208,7 @@ who_select <-
 :::
 
 
-# Clase 3: comunicar {#clase-3-qmd}
+# Clase 4: comunicar {#clase-4-qmd}
 
 [**Comunicar resultados: rmd y Quarto**]{style="color:#444442;"}
 
@@ -6638,5 +6653,569 @@ En la carpeta de [datos](https://drive.google.com/drive/folders/1dILnwzBUM4ZLpN9
 
 3. ¿Cuál de los dos tipos de tumores tienen, de media, un radio más elevado? 
 
+
+# Clase 4: funciones {#clase-4-funciones}
+
+[**¿Qué es una función? ¿Cómo se definen?**]{style="color:#444442;"}
+
+---
+
+## Creando funciones
+
+No solo podemos usar **funciones predeterminadas** que vienen ya cargadas en paquetes, además podemos [**crear nuestras propias funciones**]{.hl-yellow} para **automatizar tareas**.
+
+¿Cómo [**crear nuestra propia función**]{.hl-purple}? Veamos su **esquema básico**:
+
+. . .
+
+* [**Nombre**]{.hl-yellow}: por ejemplo `name_fun` (sin espacios ni caracteres extraños). Al nombre le [**asignamos la palabra reservada**]{.hl-yellow} `function()`.
+
+. . .
+
+* Definir [**argumentos de entrada**]{.hl-yellow} (dentro de `function()`).
+
+. . .
+
+```{r}
+#| eval: false
+name_fun <- function(arg1, arg2, ...) {
+  
+}
+```
+
+---
+
+## Creando funciones
+
+No solo podemos usar **funciones predeterminadas** que vienen ya cargadas en paquetes, además podemos [**crear nuestras propias funciones**]{.hl-yellow} para **automatizar tareas**.
+
+¿Cómo [**crear nuestra propia función**]{.hl-purple}? Veamos su **esquema básico**:
+
+
+* [**Cuerpo**]{.hl-yellow} de la función dentro de `{ }`.
+
+. . .
+
+* Finalizamos la función con los [**argumentos de salida**]{.hl-yellow} con `return()`.
+
+
+```{r}
+#| eval: false
+name_fun <- function(arg1, arg2, ...) {
+  
+  # Código que queramos ejecutar
+  código
+  
+  # Salida
+  return(var_salida)
+}
+```
+
+
+---
+
+## Creando funciones
+
+* `arg1, arg2, ...`: serán los [**argumentos de entrada**]{.hl-yellow}, los argumentos que toma la función para ejecutar el código que tiene dentro
+
+* `código`: líneas de código que queramos que [**ejecute la función**]{.hl-yellow}. 
+
+* `return(var_salida)`: se introducirán los [**argumentos de salida**]{.hl-yellow}.
+
+
+```{r}
+#| eval: false
+name_fun <- function(arg1, arg2, ...) {
+  
+  # Código que queramos ejecutar
+  código
+  
+  # Salida
+  return(var_salida)
+}
+```
+
+::: callout-important
+## Importante
+
+Todas las variables que definamos dentro de la función son [**variables locales: solo existirán dentro de la función**]{.hl-yellow} salvo que especifiquemos lo contrario.
+
+:::
+
+---
+
+## Creando funciones
+
+Veamos un ejemplo muy simple de función para [**calcular el área de un rectángulo**]{.hl-yellow}.
+
+. . .
+
+Dado que el área de un rectángulo se calcula como el **producto de sus lados**, necesitaremos precisamente eso, sus lados: esos serán los [**argumentos de entrada**]{.hl-yellow} y el [**valor a devolver**]{.hl-purple} será justo su **área** ($lado_1 * lado_2$).
+
+. . .
+
+```{r}
+# Definición del nombre de función y argumentos de entrada
+calcular_area <- function(lado_1, lado_2) {
+  
+  area <- lado_1 * lado_2
+  return(area)
+  
+}
+```
+
+---
+
+## Creando funciones
+
+
+También podemos hacer una definición directa, **sin almacenar variables por el camino**.
+
+```{r}
+# Definición del nombre de función y argumentos de entrada
+calcular_area <- function(lado_1, lado_2) {
+  
+  return(lado_1 * lado_2)
+  
+}
+```
+
+
+[**¿Cómo aplicar la función?**]{.hl-yellow}
+
+```{r}
+calcular_area(5, 3) # área de un rectángulo 5 x 3 
+calcular_area(1, 5) # área de un rectángulo 1 x 5
+```
+
+---
+
+## Argumentos por defecto
+
+Imagina ahora que nos damos cuenta que el 90% de las veces usamos dicha función para [**calcular por defecto el área de un cuadrado**]{.hl-yellow} (es decir, solo necesitamos un lado). Para ello, podemos definir [**argumentos por defecto**]{.hl-yellow} en la función: tomarán dicho valor salvo que le asignemos otro.
+
+¿Por qué no asignar `lado_2 = lado_1` por defecto, para ahorrar líneas de código y tiempo?
+
+. . .
+
+```{r}
+calcular_area <- function(lado_1, lado_2 = lado_1) {
+  
+  # Cuerpo de la función
+  area <- lado_1 * lado_2
+  
+  # Resultado que devolvemos
+  return(area)
+  
+}
+```
+
+---
+
+## Argumentos por defecto
+
+
+```{r}
+calcular_area <- function(lado_1, lado_2 = lado_1) {
+  
+  # Cuerpo de la función
+  area <- lado_1 * lado_2
+  
+  # Resultado que devolvemos
+  return(area)
+  
+}
+```
+
+
+Ahora [**por defecto**]{.hl-yellow} el segundo lado será igual al primero (si se lo añadimos usará ambos).
+
+
+```{r}
+calcular_area(lado_1 = 5) # cuadrado
+calcular_area(lado_1 = 5, lado_2 = 7) # rectángulo
+```
+
+---
+ 
+## Salida múltiple
+
+Compliquemos un poco la función y añadamos en la salida los valores de cada lado, etiquetados como `lado_1` y `lado_2`, [**empaquetando la salida en una lista**]{.hl-yellow}.
+
+```{r}
+# Definición del nombre de función y argumentos de entrada
+calcular_area <- function(lado_1, lado_2 = lado_1) {
+  
+  # Cuerpo de la función
+  area <- lado_1 * lado_2
+  
+  # Resultado
+  return(list("area" = area, "lado_1" = lado_1, "lado_2" = lado_2))
+  
+}
+```
+
+
+---
+
+## Introducción a listas
+
+Veamos un pequeño resumen de los datos que ya conocemos:
+
+* [**vectores**]{.hl-yellow}: colección de elementos de igual tipo. Pueden ser números, caracteres o valores lógicos, entre otros.
+
+* [**matrices**]{.hl-yellow}: colección BIDIMENSIONAL de elementos de igual tipo e igual longitud.
+
+* [**data.frame / tibble**]{.hl-yellow}: colección BIDIMENSIONAL de elementos de igual longitud pero de cualquier tipo.
+
+. . .
+
+Las [**listas**]{.hl-yellow} serán [**colecciones de variables de diferente tipo y diferente longitud**]{.hl-purple}, con estructuras totalmente heterógeneas (incluso una lista puede tener dentro a su vez otra lista).
+
+---
+
+## Introducción a listas
+
+
+Vamos a crear [**nuestra primera lista**]{.hl-yellow} con `list()` con tres elementos: el nombre de nuestros padres/madres, nuestro lugar de nacimiento y edades de nuestros hermanos.
+
+```{r}
+variable_1 <- c("Paloma", "Gregorio")
+variable_2 <- "Madrid"
+variable_3 <- c(25, 30, 26)
+
+lista <- list("progenitores" = variable_1, "lugar_nacimiento" = variable_2,
+              "edades_hermanos" = variable_3)
+lista
+```
+
+---
+
+## Introducción a listas
+
+```{r}
+length(lista)
+```
+
+Si observas el objeto que hemos definido como lista, su [**longitud**]{.hl-yellow} del es de 3 ya que tenemos **guardados tres elementos**: un vector de caracteres (de longitud 2), un caracter (vector de longitud 1), y un vector de números (de longitud 3)
+
+. . .
+
+Tenemos guardados elementos de [**distinto tipo**]{.hl-yellow} (algo que ya podíamos hacer) pero, además, de **longitudes dispares**.
+
+```{r}
+dim(lista) # devolverá NULL al no tener dos dimensiones
+class(lista) # de tipo lista
+```
+
+---
+
+## Introducción a listas
+
+Si los juntásemos con un `tibble()`, al tener distinta longitud, obtendríamos un [**error**]{.hl-red}.
+
+```{r}
+#| error: true
+library(tibble)
+tibble("progenitores" = variable_1,
+       "lugar_nacimiento" = variable_2,
+       "edades_hermanos" = variable_3)
+```
+
+---
+
+
+## Introducción a listas
+
+* [**Acceder por índice**]{.hl-yellow}: con el operador `[[i]]` accedemos al **elemento i-ésimo** de la lista.
+
+```{r}
+lista[[1]]
+```
+
+. . .
+
+* [**Acceder por nombre**]{.hl-yellow}: con el operador `$nombre_elemento` accedemos por su nombre.
+
+```{r}
+lista$progenitores
+```
+
+. . .
+
+En contraposición, el [**corchete simple**]{.hl-yellow} nos permite acceder a [**varios elementos**]{.hl-yellow} a la vez
+
+```{r}
+# Varios elementos
+lista[1:2]
+```
+
+---
+
+## Salida múltiple
+
+Antes nos daba igual el orden de los argumentos pero ahora el [**orden de los argumentos de entrada importa**]{.hl-yellow}, ya que en la salida incluimos `lado_1` y `lado_2`. 
+
+. . .
+
+::: callout-note
+## Recomendación
+
+Es altamente recomendable hacer la llamada a la función [**indicando explícitamente los argumentos**]{.hl-yellow} para mejorar la **legibilidad e interpretabilidad**.
+
+```{r}
+# Equivalente a calcular_area(5, 3)
+calcular_area(lado_1 = 5, lado_2 = 3)
+```
+
+:::
+
+---
+
+## Funciones: generando conocimiento
+
+Parece una tontería lo que hemos hecho pero hemos cruzado una frontera importante: hemos pasado de [**consumir conocimiento**]{.hl-yellow} (código de otros paquetes, elaborado por otros/as), a [**generar conocimiento**]{.hl-purple}, creando nuestras propias funciones.
+
+---
+
+## Variables locales vs globales
+
+Un aspecto importante sobre el que reflexionar con las funciones: ¿qué sucede si [**nombramos a una variable dentro**]{.hl-yellow} de una función a la que se nos ha **olvidado asignar** un valor dentro de la misma?
+
+. . .
+
+Debemos ser cautos al usar funciones en `R`, ya que debido a la [**«regla lexicográfica»**]{.hl-yellow}, si una variable no se define dentro de la función, `R` [**buscará dicha variable en el entorno**]{.hl-purple} de variables.
+
+```{r}
+x <- 1
+funcion_ejemplo <- function() {
+    
+  print(x) # No devuelve nada, solo realiza la acción 
+}
+funcion_ejemplo()
+```
+
+---
+
+## Variables locales vs globales
+
+Si una variable  [**ya está definida fuera de la función (entorno global)**]{.hl-yellow}, y además es usada dentro de cambiando su valor, el valor [**solo cambia dentro**]{.hl-yellow} pero [**no en el entorno global**]{.hl-red}.
+
+```{r}
+x <- 1
+funcion_ejemplo <- function() {
+    
+  x <- 2
+  print(x) # lo que vale dentro
+}
+```
+
+```{r}
+# lo que vale dentro
+funcion_ejemplo() #<<
+# lo que vale fuera
+print(x) #<<
+```
+
+---
+
+## Variables locales vs globales
+
+
+Si queremos que además de cambiar localmente lo haga [**globalmente**]{.hl-yellow} deberemos usar la [**doble asignación**]{.hl-yellow} (`<<-`).
+
+```{r}
+x <- 1
+y <- 2
+funcion_ejemplo <- function() {
+  
+  # no cambia globalmente, solo localmente
+  x <- 3 
+  # cambia globalmente
+  y <<- 0 #<<
+  
+  print(x)
+  print(y)
+}
+
+funcion_ejemplo() # lo que vale dentro
+x # lo que vale fuera
+y # lo que vale fuera
+```
+
+---
+
+
+## 💻 Tu turno {#tu-turno-9}
+
+[**Intenta realizar los siguientes ejercicios sin mirar las soluciones**]{style="color:#444442;"}
+
+::: panel-tabset
+
+### [**Ejercicio 1**]{.hl-yellow}
+
+📝 Modifica el código inferior para definir una función llamada `funcion_suma`, de forma que dados dos elementos, devuelve su suma.
+
+```{r}
+#| eval: false
+nombre <- function(x, y) {
+  suma <- # código a ejecutar
+  return()
+}
+# Aplicamos la función
+suma(3, 7)
+```
+
+```{r}
+#| code-fold: true
+#| eval: false
+funcion_suma <- function(x, y) {
+  suma <- x + y
+  return(suma)
+}
+funcion_suma(3, 7)
+```
+
+### [**Ejercicio 2**]{.hl-yellow}
+
+📝 Modifica el código inferior para definir una función llamada `funcion_producto`, de forma que dados dos elementos, devuelve su producto, pero que por defecto calcule el cuadrado
+
+```{r}
+#| eval: false
+nombre <- function(x, y) {
+  producto <- # código de la multiplicación
+  return()
+}
+producto(3)
+producto(3, -7)
+```
+
+```{r}
+#| code-fold: true
+#| eval: false
+funcion_producto <- function(x, y = x) {
+  producto <- x * y
+  return(producto)
+}
+funcion_producto(3)
+funcion_producto(3, -7)
+```
+
+### [**Ejercicio 3**]{.hl-yellow}
+
+📝 Define una función llamada `igualdad_nombres` que, dados dos nombres, nos diga si son iguales o no. Hazlo considerando importantes las mayúsculas, y sin que importen las mayúsculas. Echa un vistazo al paquete `{stringr}`.
+
+```{r}
+#| code-fold: true
+#| eval: false
+# Distinguiendo mayúsculas
+igualdad_nombres <- function(persona_1, persona_2) {
+  return(persona_1 == persona_2)
+}
+igualdad_nombres("Javi", "javi")
+igualdad_nombres("Javi", "Lucía")
+
+# Sin importar mayúsculas
+igualdad_nombres <- function(persona_1, persona_2) {
+  return(toupper(persona_1) == toupper(persona_2))
+}
+igualdad_nombres("Javi", "javi")
+igualdad_nombres("Javi", "Lucía")
+```
+
+### [**Ejercicio 4**]{.hl-yellow}
+
+📝 Crea una función llamada `calculo_IMC` que, dados dos argumentos (peso y estatura en metros) y un nombre, devuelva una lista con el IMC y el nombre.
+
+```{r}
+#| code-fold: true
+#| eval: false
+calculo_IMC <- function(nombre, peso, estatura) {
+  
+  return(list("nombre" = nombre, "IMC" = peso/(estatura^2)))
+}
+```
+
+### [**Ejercicio 5**]{.hl-yellow}
+
+📝 Repite el ejercicio anterior pero con otro argumento opcional que se llame unidades (por defecto, `unidades = "metros"`). Desarrolla la función de forma que haga lo correcto si `unidades = "metros"` y si `unidades = "centímetros"`.
+
+```{r}
+#| code-fold: true
+#| eval: false
+calculo_IMC <- function(nombre, peso, estatura, unidades = "metros") {
+  
+  return(list("nombre" = nombre,
+              "IMC" = peso/(if_else(unidades == "metros", estatura, estatura/100)^2)))
+}
+```
+
+ 
+### [**Ejercicio 6**]{.hl-yellow}
+
+📝 Crea un tibble ficticio de 7 personas, con tres variables (inventa nombre, y simula peso, estatura en centímetros), y aplica la función definida de forma que obtengamos una cuarta columna con su IMC.
+
+```{r}
+#| code-fold: true
+#| eval: false
+datos <-
+  tibble("nombres" = c("javi", "sandra", "laura",
+                       "ana", "carlos", "leo", NA),
+         "peso" = rnorm(n = 7, mean = 70, sd = 1),
+         "estatura" = rnorm(n = 7, mean = 168, sd = 5))
+
+datos |> 
+  mutate(IMC = calculo_IMC(nombres, peso, estatura, unidades = "centímetros")$IMC)
+```
+
+
+:::
+
+
+---
+
+## 🐣 Caso práctico 10: funciones {#caso10a}
+
+Define una función llamada `conversor_temperatura` que, dada una temperatura en Fahrenheit, Celsius o Kelvin, la convierta a cualquiera de las otras (piensa que argumentos necesita el usuario). Aplica la función a la columna `Temp` del conjunto `airquality`, e incorpórala al fichero en una nueva columna `Temp_Celsius`.
+
+---
+
+## 🐣 Caso práctico 10: tidyverse {#caso10b}
+
+
+Acude a <https://cnecovid.isciii.es/covid19/#documentaci%C3%B3n-y-datos> e importa  `casos_hosp_uci_def_sexo_edad_provres.csv`. Documentación en <https://cnecovid.isciii.es/covid19/resources/metadata_casos_hosp_uci_def_sexo_edad_provres.pdf>
+
+. . .
+
+1. ¿Cuántos casos hay notificados para edad desconocida? ¿Y desagregado por sexo? Recodifica adecuadamente las provincias
+
+. . .
+
+2. Dado su escaso peso en el total, genera una nueva base de datos en la que borremos aquellos registros con franja de edad desconocida. 
+
+. . .
+
+
+3. Con la base de datos generada en el ejercicio anterior, calcula la proporción de casos con sexo desconocido. Haz lo mismo con provincia desconocida. Elimina dichos registros si el número de casos representa menos del 1% (para cada una).
+
+
+---
+
+## 🐣 Caso práctico 10: tidyverse
+
+
+4. Del dataset anterior, elimina la variables de hospitalizados y UCI. Tras ello renombra las columnas de casos y fallecidos por `casos_diarios` y `fallec_diarios`, respectivamente. Tras ello crea dos nuevas variables llamadas `casos_acum` y otra `fallec_acum`, que contengan los casos acumulados y fallecidos acumulados para cada fecha, desagregados por provincia, tramo etario y sexo.
+
+. . .
+
+5. ¿Cuáles fueron las 7 provincias con más casos a lo largo de toda la pandemia? ¿Y las 5 provincias con menos fallecidos? ¿Y si lo desagregamos por sexo?
+
+---
+
+## 🐣 Caso práctico 10: tidyverse
+
+6. Define una función llamada `calculo_letalidad()` que, dados como argumentos un vector ordenado (por fecha) de casos y otro de fallecidos, devuelva el % de casos que han fallecido, de manera acumulada en cada fecha. Haz uso de dicha función y crea una nueva variable que represente la letalidad, en cada grupo de edad, sexo y provincia.
+
+Tras ello, determina las 5 provincias con mayor letalidad en mujeres mayores de 80 años a fecha 01 de marzo de 2022.
 
 
